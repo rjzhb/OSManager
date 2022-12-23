@@ -1,0 +1,5 @@
+/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir
+/home/rjzhb/Project/OSManager/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
+/home/rjzhb/Project/OSManager/cmake-build-debug/src/CMakeFiles/edit_cache.dir

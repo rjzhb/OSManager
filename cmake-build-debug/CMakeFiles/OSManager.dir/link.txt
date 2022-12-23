@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/OSManager.dir/main.cpp.o  -o OSManager 
