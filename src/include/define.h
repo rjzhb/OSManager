@@ -23,6 +23,11 @@ constexpr int MAX_FREE_BLOCK = 11;
 constexpr int MAX_NUMBER_OF_GROUPS = 10;
 
 
+enum class FileType {
+    FOLDER,
+    FILE,
+};
+
 //文件索引节点
 struct Inode {
     //编号
@@ -36,7 +41,13 @@ struct Inode {
 //文件目录项(树形结构)
 struct Dentry {
     //文件名
-    std::string name;
+    std::string fileName;
+    //文件所有者
+    std::string userName;
+    //文件创建时间
+    std::string createTime;
+    //文件类型
+    FileType type;
     //索引节点指针
     Inode *inode;
     //上一级目录
