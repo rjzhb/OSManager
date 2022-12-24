@@ -8,7 +8,12 @@
 
 class ThreadManager {
 public:
+    //构造函数根据自身情况添加参数
+    ThreadManager();
 
+    ~ThreadManager() = default;
+
+    //数据生成线程
 
 private:
 };

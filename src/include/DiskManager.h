@@ -16,8 +16,11 @@ public:
 
     ~DiskManager() = default;
 
+    //
+
     //输出所有空闲块
     void print_free_blocks();
+
 
 private:
 

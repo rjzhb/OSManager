@@ -3,3 +3,20 @@
 //
 
 #include "CatalogManager.h"
+
+
+void CatalogManager::mkdir(std::string dir_name) {
+
+}
+
+void CatalogManager::rmdir(std::string dir_name) {
+
+}
+
+void CatalogManager::create_dentry(Inode inode) {
+
+}
+
+void CatalogManager::rmfile(std::string file_name) {
+
+}

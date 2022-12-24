@@ -6,8 +6,18 @@
 #define OSMANAGER_MEMORYMANAGER_H
 
 
+#include "define.h"
+
 class MemoryManager {
 public:
+    //构造函数根据自身情况添加参数
+    MemoryManager();
+
+    ~MemoryManager() = default;
+
+    void alloc(Inode* inode);
+
+    void free(Inode* inode);
 
 
 private:
