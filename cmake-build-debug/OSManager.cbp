@@ -87,6 +87,24 @@
 		<Unit filename="/home/rjzhb/Project/OSManager/main.cpp">
 			<Option target="OSManager"/>
 		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/catalog/CatalogManager.cpp">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/disk/DiskManager.cpp">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/include/CatalogManager.h">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/include/DiskManager.h">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/memory/MemoryManager.cpp">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/memory/MemoryManager.h">
+			<Option target="OSManager"/>
+		</Unit>
 		<Unit filename="/home/rjzhb/Project/OSManager/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

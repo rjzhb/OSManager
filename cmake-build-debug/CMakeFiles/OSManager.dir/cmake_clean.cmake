@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/OSManager.dir/main.cpp.o"
+  "CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o"
+  "CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o"
+  "CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o"
   "OSManager"
   "OSManager.pdb"
 )

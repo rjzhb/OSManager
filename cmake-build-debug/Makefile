@@ -150,6 +150,87 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/catalog/CatalogManager.o: src/catalog/CatalogManager.cpp.o
+
+.PHONY : src/catalog/CatalogManager.o
+
+# target to build an object file
+src/catalog/CatalogManager.cpp.o:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o
+.PHONY : src/catalog/CatalogManager.cpp.o
+
+src/catalog/CatalogManager.i: src/catalog/CatalogManager.cpp.i
+
+.PHONY : src/catalog/CatalogManager.i
+
+# target to preprocess a source file
+src/catalog/CatalogManager.cpp.i:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.i
+.PHONY : src/catalog/CatalogManager.cpp.i
+
+src/catalog/CatalogManager.s: src/catalog/CatalogManager.cpp.s
+
+.PHONY : src/catalog/CatalogManager.s
+
+# target to generate assembly for a file
+src/catalog/CatalogManager.cpp.s:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.s
+.PHONY : src/catalog/CatalogManager.cpp.s
+
+src/disk/DiskManager.o: src/disk/DiskManager.cpp.o
+
+.PHONY : src/disk/DiskManager.o
+
+# target to build an object file
+src/disk/DiskManager.cpp.o:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o
+.PHONY : src/disk/DiskManager.cpp.o
+
+src/disk/DiskManager.i: src/disk/DiskManager.cpp.i
+
+.PHONY : src/disk/DiskManager.i
+
+# target to preprocess a source file
+src/disk/DiskManager.cpp.i:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.i
+.PHONY : src/disk/DiskManager.cpp.i
+
+src/disk/DiskManager.s: src/disk/DiskManager.cpp.s
+
+.PHONY : src/disk/DiskManager.s
+
+# target to generate assembly for a file
+src/disk/DiskManager.cpp.s:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.s
+.PHONY : src/disk/DiskManager.cpp.s
+
+src/memory/MemoryManager.o: src/memory/MemoryManager.cpp.o
+
+.PHONY : src/memory/MemoryManager.o
+
+# target to build an object file
+src/memory/MemoryManager.cpp.o:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o
+.PHONY : src/memory/MemoryManager.cpp.o
+
+src/memory/MemoryManager.i: src/memory/MemoryManager.cpp.i
+
+.PHONY : src/memory/MemoryManager.i
+
+# target to preprocess a source file
+src/memory/MemoryManager.cpp.i:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.i
+.PHONY : src/memory/MemoryManager.cpp.i
+
+src/memory/MemoryManager.s: src/memory/MemoryManager.cpp.s
+
+.PHONY : src/memory/MemoryManager.s
+
+# target to generate assembly for a file
+src/memory/MemoryManager.cpp.s:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.s
+.PHONY : src/memory/MemoryManager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +243,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/catalog/CatalogManager.o"
+	@echo "... src/catalog/CatalogManager.i"
+	@echo "... src/catalog/CatalogManager.s"
+	@echo "... src/disk/DiskManager.o"
+	@echo "... src/disk/DiskManager.i"
+	@echo "... src/disk/DiskManager.s"
+	@echo "... src/memory/MemoryManager.o"
+	@echo "... src/memory/MemoryManager.i"
+	@echo "... src/memory/MemoryManager.s"
 .PHONY : help
 
 
