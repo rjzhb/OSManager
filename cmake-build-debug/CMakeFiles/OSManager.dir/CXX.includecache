@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/include/DiskManager.h
+cstddef
+-
+list
+-
+define.h
+../src/include/define.h
+
+../src/include/define.h
+cstddef
+-
+string
+-
+vector
+-
+
+/home/rjzhb/Project/OSManager/src/disk/DiskManager.cpp
+iostream
+-
+DiskManager.h
+/home/rjzhb/Project/OSManager/src/disk/DiskManager.h
+

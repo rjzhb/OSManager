@@ -231,6 +231,33 @@ src/memory/MemoryManager.cpp.s:
 	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.s
 .PHONY : src/memory/MemoryManager.cpp.s
 
+src/thread/ThreadManager.o: src/thread/ThreadManager.cpp.o
+
+.PHONY : src/thread/ThreadManager.o
+
+# target to build an object file
+src/thread/ThreadManager.cpp.o:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o
+.PHONY : src/thread/ThreadManager.cpp.o
+
+src/thread/ThreadManager.i: src/thread/ThreadManager.cpp.i
+
+.PHONY : src/thread/ThreadManager.i
+
+# target to preprocess a source file
+src/thread/ThreadManager.cpp.i:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.i
+.PHONY : src/thread/ThreadManager.cpp.i
+
+src/thread/ThreadManager.s: src/thread/ThreadManager.cpp.s
+
+.PHONY : src/thread/ThreadManager.s
+
+# target to generate assembly for a file
+src/thread/ThreadManager.cpp.s:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.s
+.PHONY : src/thread/ThreadManager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,6 +279,9 @@ help:
 	@echo "... src/memory/MemoryManager.o"
 	@echo "... src/memory/MemoryManager.i"
 	@echo "... src/memory/MemoryManager.s"
+	@echo "... src/thread/ThreadManager.o"
+	@echo "... src/thread/ThreadManager.i"
+	@echo "... src/thread/ThreadManager.s"
 .PHONY : help
 
 

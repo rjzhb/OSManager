@@ -99,10 +99,19 @@
 		<Unit filename="/home/rjzhb/Project/OSManager/src/include/DiskManager.h">
 			<Option target="OSManager"/>
 		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/include/MemoryManager.h">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/include/ThreadManager.h">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/include/define.h">
+			<Option target="OSManager"/>
+		</Unit>
 		<Unit filename="/home/rjzhb/Project/OSManager/src/memory/MemoryManager.cpp">
 			<Option target="OSManager"/>
 		</Unit>
-		<Unit filename="/home/rjzhb/Project/OSManager/src/memory/MemoryManager.h">
+		<Unit filename="/home/rjzhb/Project/OSManager/src/thread/ThreadManager.cpp">
 			<Option target="OSManager"/>
 		</Unit>
 		<Unit filename="/home/rjzhb/Project/OSManager/CMakeLists.txt">
