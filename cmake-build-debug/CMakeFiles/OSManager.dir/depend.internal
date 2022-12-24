@@ -7,13 +7,19 @@ CMakeFiles/OSManager.dir/main.cpp.o
  /home/rjzhb/Project/OSManager/main.cpp
 CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o
  ../src/include/CatalogManager.h
+ ../src/include/DiskManager.h
+ ../src/include/define.h
  /home/rjzhb/Project/OSManager/src/catalog/CatalogManager.cpp
 CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o
  ../src/include/DiskManager.h
  ../src/include/define.h
  /home/rjzhb/Project/OSManager/src/disk/DiskManager.cpp
+CMakeFiles/OSManager.dir/src/memory/LRUReplacer.cpp.o
+ ../src/include/LRUReplacer.h
+ /home/rjzhb/Project/OSManager/src/memory/LRUReplacer.cpp
 CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o
  ../src/include/MemoryManager.h
+ ../src/include/define.h
  /home/rjzhb/Project/OSManager/src/memory/MemoryManager.cpp
 CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o
  ../src/include/ThreadManager.h

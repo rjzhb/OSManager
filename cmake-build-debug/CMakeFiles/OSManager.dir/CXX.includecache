@@ -22,9 +22,9 @@ string
 vector
 -
 
-/home/rjzhb/Project/OSManager/src/disk/DiskManager.cpp
+/home/rjzhb/Project/OSManager/main.cpp
 iostream
 -
 DiskManager.h
-/home/rjzhb/Project/OSManager/src/disk/DiskManager.h
+/home/rjzhb/Project/OSManager/DiskManager.h
 
