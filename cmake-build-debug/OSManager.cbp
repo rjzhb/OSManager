@@ -108,6 +108,12 @@
 		<Unit filename="/home/rjzhb/Project/OSManager/src/include/define.h">
 			<Option target="OSManager"/>
 		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/memory/LRUReplacer.cpp">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/memory/LRUReplacer.h">
+			<Option target="OSManager"/>
+		</Unit>
 		<Unit filename="/home/rjzhb/Project/OSManager/src/memory/MemoryManager.cpp">
 			<Option target="OSManager"/>
 		</Unit>
