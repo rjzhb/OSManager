@@ -36,14 +36,13 @@ struct Inode {
     size_t size;
     //数据
     std::string data;
+
 };
 
 //文件目录项(树形结构)
 struct Dentry {
     //文件名
     std::string fileName;
-    //文件所有者
-    std::string userName;
     //文件创建时间
     std::string createTime;
     //文件类型
