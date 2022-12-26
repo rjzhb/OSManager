@@ -14,7 +14,7 @@
 class ThreadManager {
 public:
     //构造函数根据自身情况添加参数
-    ThreadManager(DiskManager *disk_manager, CatalogManager *catalog_manager);
+    ThreadManager(DiskManager *disk_manager, CatalogManager *catalog_manager, MemoryManager *memory_manager);
 
     ~ThreadManager() = default;
 
@@ -25,8 +25,8 @@ public:
     void remove(std::string name, std::string path);
 
 private:
-    std::thread data_genethread_;
-    std::thread data_thread_;
+    std::thread data_generate_thread_;
+    std::thread data_remove_thread_;
     DiskManager *disk_manager_;
     CatalogManager *catalog_manager_;
     MemoryManager *memory_manager_;
