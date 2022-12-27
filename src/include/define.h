@@ -36,6 +36,7 @@ struct Inode {
     size_t size;
     //数据
     std::string data;
+
 };
 
 struct nodespace {
@@ -51,8 +52,6 @@ struct nodespace {
 struct Dentry {
     //文件名
     std::string fileName;
-    //文件所有者
-    std::string userName;
     //文件创建时间
     std::string createTime;
     //文件类型
