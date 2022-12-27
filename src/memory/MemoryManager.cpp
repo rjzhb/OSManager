@@ -13,3 +13,15 @@ void MemoryManager::alloc(Inode *inode) {
 void MemoryManager::free(Inode *inode) {
 
 }
+
+
+void initNode(struct nodespace* p) {
+    if (p == NULL) { //如果为空则新创建一个
+        p = (struct nodespace*)malloc(sizeof(struct nodespace));
+    }
+    p->teskid = -1;
+    p->begin = 0;
+    p->size = 2560;
+    p->status = 1;
+    p->next = NULL;
+}

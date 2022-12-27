@@ -38,6 +38,15 @@ struct Inode {
     std::string data;
 };
 
+struct nodespace {
+    int teskid;   // 任务号
+    int begin;    // 开始地址
+    int size;     // 大小
+    int status;   // 状态 0代表占用，1代表空闲
+    struct nodespace* next;  // 后指针
+};
+
+
 //文件目录项(树形结构)
 struct Dentry {
     //文件名
