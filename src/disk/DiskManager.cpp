@@ -48,3 +48,18 @@ void DiskManager::print_free_blocks() {
         std::cout << std::endl;
     }
 }
+
+void DiskManager::Swapping_read(){
+    int i;
+    for(i=0;i<100;i++)
+    {
+        swaping_ara[i]=ready_to_read[i];
+    }
+}
+void DiskManager::Swapping_write(){
+    int i;
+    for(i=0;i<100;i++)
+    {
+        ready_to_write[i]=swaping_ara[i];
+    }
+}

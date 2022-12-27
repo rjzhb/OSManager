@@ -1,1 +1,3 @@
-/usr/bin/c++  -g   CMakeFiles/OSManager.dir/main.cpp.o CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o CMakeFiles/OSManager.dir/src/memory/LRUReplacer.cpp.o  -o OSManager 
+"D:\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\OSManager.dir/objects.a
+D:\CLION2~1.1\bin\mingw\bin\ar.exe qc CMakeFiles\OSManager.dir/objects.a @CMakeFiles\OSManager.dir\objects1.rsp
+D:\CLION2~1.1\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\OSManager.dir/objects.a -Wl,--no-whole-archive -o OSManager.exe -Wl,--out-implib,libOSManager.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\OSManager.dir\linklibs.rsp

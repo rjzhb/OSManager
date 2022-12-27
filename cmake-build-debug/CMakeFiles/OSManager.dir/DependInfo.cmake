@@ -1,21 +1,19 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/rjzhb/Project/OSManager/main.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/main.cpp.o"
-  "/home/rjzhb/Project/OSManager/src/catalog/CatalogManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o"
-  "/home/rjzhb/Project/OSManager/src/disk/DiskManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o"
-  "/home/rjzhb/Project/OSManager/src/memory/LRUReplacer.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/memory/LRUReplacer.cpp.o"
-  "/home/rjzhb/Project/OSManager/src/memory/MemoryManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o"
-  "/home/rjzhb/Project/OSManager/src/thread/ThreadManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src/include"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/86159/CLionProjects/OSManager/main.cpp" "CMakeFiles/OSManager.dir/main.cpp.obj" "gcc" "CMakeFiles/OSManager.dir/main.cpp.obj.d"
+  "C:/Users/86159/CLionProjects/OSManager/src/catalog/CatalogManager.cpp" "CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.obj" "gcc" "CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.obj.d"
+  "C:/Users/86159/CLionProjects/OSManager/src/disk/DiskManager.cpp" "CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.obj" "gcc" "CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.obj.d"
+  "C:/Users/86159/CLionProjects/OSManager/src/memory/LRUReplacer.cpp" "CMakeFiles/OSManager.dir/src/memory/LRUReplacer.cpp.obj" "gcc" "CMakeFiles/OSManager.dir/src/memory/LRUReplacer.cpp.obj.d"
+  "C:/Users/86159/CLionProjects/OSManager/src/memory/MemoryManager.cpp" "CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.obj" "gcc" "CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.obj.d"
+  "C:/Users/86159/CLionProjects/OSManager/src/thread/ThreadManager.cpp" "CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.obj" "gcc" "CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.obj.d"
   )
 
 # Targets to which this target links.
