@@ -7,20 +7,31 @@
 
 
 #include "define.h"
+#include "DiskManager.h"
+#include <unordered_map>
+#include <list>
 
 class MemoryManager {
 public:
     //构造函数根据自身情况添加参数
-    MemoryManager();
+    MemoryManager(DiskManager *disk_manager);
 
     ~MemoryManager() = default;
 
-    void alloc(Inode* inode);
+    void alloc(Inode *inode);
 
-    void free(Inode* inode);
-
+    void free(Inode *inode);
 
 private:
+    //页表
+    std::unordered_map<int, void *> page_table_;
+    //已分配内存页
+    std::list<Page*> alloc_page_list_;
+    //空闲内存页
+    std::list<Page*> free_page_list_;
+
+    DiskManager *disk_manager_;
+
 };
 
 

@@ -51,50 +51,23 @@ void DiskManager::print_free_blocks() {
     }
 }
 
-void DiskManager::Swapping_read() {
-    int i;
-    for (i = 0; i < 100; i++) {
-        swaping_ara[i] = ready_to_read[i];
+Page *DiskManager::swap_read() {
+    if (swap_list_.empty()) {
+        std::cout << "兑换区为空" << std::endl;
     }
+    Page *block = swap_list_.front();
+    swap_list_.pop_front();
+    return block;
 }
 
-void DiskManager::Swapping_write() {
-    int i;
-    for (i = 0; i < 100; i++) {
-        ready_to_write[i] = swaping_ara[i];
+void DiskManager::swap_write(Page* page) {
+    if (swap_list_.size() >= SWAP_BLOCK_NUMBER) {
+        swap_read();
     }
+    swap_list_.push_back(page);
 }
 
 void DiskManager::alloc_free_block(Dentry *dentry) {
-    //计算需要分配的大小
-    int alloc_size = 0;
-    //每块空闲块的大小
-    const int block_size = DISK_SIZE / DISK_BLOCK_NUMBER;
-    switch (dentry->type) {
-        case FileType::FILE :
-            alloc_size = dentry->inode->data.size();
-            break;
-        case FileType::FOLDER:
-            alloc_size = 0;
-            break;
-    }
-    //需要分配的空闲块个数
-    int block_count = alloc_size / block_size;
-    int block_groups = (block_count + MAX_FREE_BLOCK - last_j) / MAX_NUMBER_OF_BLOCKS;
-    int block_per_count = (block_count + MAX_FREE_BLOCK - last_j) % MAX_NUMBER_OF_BLOCKS;
-    //分配空闲块
-    last_i -= block_groups;
-    last_j -= block_per_count;
-
-    if (last_i < 0) {
-        std::cout << "error: 分配空闲块失败，原因：空闲块不足" << std::endl;
-    }
-
-    free_block_list_[last_i][0] = MAX_FREE_BLOCK - block_per_count;
-    for (int i = last_i + 1; i < MAX_NUMBER_OF_GROUPS; i++) {
-        free_block_list_[i][0] = 0;
-    }
-
     //加入映射
     if (dentry_map_.find(path) == dentry_map_.end()) {
         //如果map里面没有dentry链表,则创建dentry链表
@@ -114,6 +87,36 @@ void DiskManager::alloc_free_block(Dentry *dentry) {
             }
         }
     }
+
+    //计算需要分配的大小
+    int alloc_size = 0;
+    //每块空闲块的大小
+    const int block_size = DISK_SIZE / DISK_BLOCK_NUMBER;
+    switch (dentry->type) {
+        case FileType::FILE :
+            alloc_size = dentry->inode->data.size();
+            break;
+        case FileType::FOLDER:
+            return;
+    }
+
+    //需要分配的空闲块个数
+    int block_count = alloc_size / block_size;
+    int block_groups = (block_count + MAX_FREE_BLOCK - last_j) / MAX_NUMBER_OF_BLOCKS;
+    int block_per_count = (block_count + MAX_FREE_BLOCK - last_j) % MAX_NUMBER_OF_BLOCKS;
+    //分配空闲块
+    last_i -= block_groups;
+    last_j -= block_per_count;
+
+    if (last_i < 0) {
+        std::cout << "error: 分配空闲块失败，原因：空闲块不足" << std::endl;
+    }
+
+    free_block_list_[last_i][0] = MAX_FREE_BLOCK - block_per_count;
+    for (int i = last_i + 1; i < MAX_NUMBER_OF_GROUPS; i++) {
+        free_block_list_[i][0] = 0;
+    }
+
 }
 
 void DiskManager::delete_free_block(Dentry *dentry) {
@@ -161,7 +164,7 @@ void DiskManager::delete_free_block(Dentry *dentry) {
             break;
         case FileType::FOLDER:
             alloc_size = 0;
-            break;
+            return;
     }
     //需要释放的空闲块个数
     int block_count = alloc_size / block_size;

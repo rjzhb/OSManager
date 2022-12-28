@@ -35,11 +35,18 @@ constexpr int MAX_FREE_BLOCK = 11;
 constexpr int MAX_NUMBER_OF_GROUPS = 10;
 //每组用户可分配的最大空闲块数量
 constexpr int MAX_NUMBER_OF_BLOCKS = 9;
+//内存空间
+constexpr int TOTAL_MEMORY_SIZE = 2560;
+//划分内存块数
+constexpr int MEMORY_BLOCK_SIZE = 64;
+//每块内存大小
+constexpr int PER_MEMORY_SIZE = TOTAL_MEMORY_SIZE / MEMORY_BLOCK_SIZE;
 
 //当前路径
 std::string path;
 //计数
 int inum = 0;
+int page_id = 0;
 
 enum class FileType {
     FOLDER,
@@ -55,14 +62,6 @@ struct Inode {
     //数据
     std::string data;
 
-};
-
-struct nodespace {
-    int teskid;   // 任务号
-    int begin;    // 开始地址
-    int size;     // 大小
-    int status;   // 状态 0代表占用，1代表空闲
-    struct nodespace *next;  // 后指针
 };
 
 
@@ -83,31 +82,12 @@ struct Dentry {
 };
 
 
-//磁盘块结构定义
-struct DiskBlock {
-    int id;
-    size_t size;
 
-    DiskBlock(int id) {
-        this->id = id;
-        this->size = DISK_SIZE / DISK_BLOCK_NUMBER;
-    }
-};
-
-//数据块，连续存储方式
-struct DataBlock {
-    int begin_id;
-    int end_id;
-    size_t size;
-
+//页(内存块)
+struct Page {
+    int pageId;
     //文件索引
     Inode *inode;
-
-    DataBlock(int begin_id, int end_id) {
-        this->begin_id = begin_id;
-        this->end_id = end_id;
-        this->size = (end_id - begin_id + 1) * (DISK_SIZE / DISK_BLOCK_NUMBER);
-    }
 };
 
 

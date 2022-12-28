@@ -7,6 +7,7 @@
 
 
 #include "DiskManager.h"
+#include "MemoryManager.h"
 
 class CatalogManager {
 public:
@@ -37,8 +38,12 @@ public:
     //打开文件
     void open(std::string file_name);
 
+    //关闭文件
+    void close(std::string file_name);
+
 private:
-    DiskManager *diskManager;
+    DiskManager *disk_manager_;
+    MemoryManager *memory_manager_;
 };
 
 

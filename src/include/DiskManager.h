@@ -27,9 +27,9 @@ public:
     void print_free_blocks();
 
     //兑换区读写
-    void Swapping_read();
+    Page *swap_read();
 
-    void Swapping_write();
+    void swap_write(Page *page);
 
     auto get_dentry_list(std::string path) -> std::list<Dentry *>;
 
@@ -43,14 +43,8 @@ private:
     int last_i = 0;
     int last_j = 0;
 
-
     //兑换区
-    struct data {
-
-    };
-    data ready_to_read[100];
-    data ready_to_write[100];
-    data swaping_ara[100];
+    std::list<Page *> swap_list_;
 };
 
 
