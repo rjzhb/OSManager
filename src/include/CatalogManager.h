@@ -16,20 +16,29 @@ public:
     ~CatalogManager() = default;
 
 
-    //新建目录
+    //新建空目录
     void mkdir(std::string dir_name);
 
-    //删除目录
+    //删除空目录
     void rmdir(std::string dir_name);
 
-    //为文件建立目录项
-    void create_dentry(Inode inode);
+    //创建文件
+    void create_file(std::string file_name, std::string data);
 
     //删除文件
     void rmfile(std::string file_name);
 
+    //列出当前目录所有文件夹和文件
+    void ls();
+
+    //打开文件夹
+    void cd(std::string dir_name);
+
+    //打开文件
+    void open(std::string file_name);
+
 private:
-    //用上的数据结构都放这
+    DiskManager *diskManager;
 };
 
 

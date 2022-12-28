@@ -5,6 +5,7 @@
 #include "DiskManager.h"
 
 DiskManager::DiskManager() {
+    //初始化空闲块
     for (int i = 0; i < MAX_NUMBER_OF_GROUPS; i++) {
         int count_free = 0;
 
@@ -26,6 +27,7 @@ DiskManager::DiskManager() {
 
     last_i = MAX_NUMBER_OF_GROUPS - 1;
     last_j = MAX_FREE_BLOCK - 1;
+
 
 }
 
@@ -49,17 +51,138 @@ void DiskManager::print_free_blocks() {
     }
 }
 
-void DiskManager::Swapping_read(){
+void DiskManager::Swapping_read() {
     int i;
-    for(i=0;i<100;i++)
-    {
-        swaping_ara[i]=ready_to_read[i];
+    for (i = 0; i < 100; i++) {
+        swaping_ara[i] = ready_to_read[i];
     }
 }
-void DiskManager::Swapping_write(){
+
+void DiskManager::Swapping_write() {
     int i;
-    for(i=0;i<100;i++)
-    {
-        ready_to_write[i]=swaping_ara[i];
+    for (i = 0; i < 100; i++) {
+        ready_to_write[i] = swaping_ara[i];
     }
 }
+
+void DiskManager::alloc_free_block(Dentry *dentry) {
+    //计算需要分配的大小
+    int alloc_size = 0;
+    //每块空闲块的大小
+    const int block_size = DISK_SIZE / DISK_BLOCK_NUMBER;
+    switch (dentry->type) {
+        case FileType::FILE :
+            alloc_size = dentry->inode->data.size();
+            break;
+        case FileType::FOLDER:
+            alloc_size = 0;
+            break;
+    }
+    //需要分配的空闲块个数
+    int block_count = alloc_size / block_size;
+    int block_groups = (block_count + MAX_FREE_BLOCK - last_j) / MAX_NUMBER_OF_BLOCKS;
+    int block_per_count = (block_count + MAX_FREE_BLOCK - last_j) % MAX_NUMBER_OF_BLOCKS;
+    //分配空闲块
+    last_i -= block_groups;
+    last_j -= block_per_count;
+
+    if (last_i < 0) {
+        std::cout << "error: 分配空闲块失败，原因：空闲块不足" << std::endl;
+    }
+
+    free_block_list_[last_i][0] = MAX_FREE_BLOCK - block_per_count;
+    for (int i = last_i + 1; i < MAX_NUMBER_OF_GROUPS; i++) {
+        free_block_list_[i][0] = 0;
+    }
+
+    //加入映射
+    if (dentry_map_.find(path) == dentry_map_.end()) {
+        //如果map里面没有dentry链表,则创建dentry链表
+        std::list<Dentry *> dentry_list;
+        dentry_list.push_back(dentry);
+        dentry_map_[path] = dentry_list;
+    } else {
+        dentry_map_[path].push_back(dentry);
+    }
+
+    //更新上一级映射
+    if (path != "/") {
+        std::string the_last_path = get_last_path(path);
+        for (auto it: dentry_map_[the_last_path]) {
+            if (it->type == FileType::FOLDER) {
+                it->children.push_back(dentry);
+            }
+        }
+    }
+}
+
+void DiskManager::delete_free_block(Dentry *dentry) {
+    if (dentry_map_.find(path) == dentry_map_.end()) {
+        std::cout << "文件不存在" << std::endl;
+        return;
+    }
+
+    bool flag = false;
+    //删除链表中的dentry
+    for (auto it: dentry_map_[path]) {
+        if (it->name == dentry->name && it->type == dentry->type) {
+            dentry_map_[path].remove(it);
+            flag = true;
+            break;
+        }
+    }
+
+    if (!flag) {
+        std::cout << "文件不存在" << std::endl;
+        return;
+    }
+
+    //更新上一级映射
+    if (path != "/" && dentry->type == FileType::FOLDER) {
+        std::string the_last_path = get_last_path(path);
+        for (auto it: dentry_map_[the_last_path]) {
+            if (it->type == FileType::FOLDER) {
+                for (auto it = dentry_map_[the_last_path].begin(); it != dentry_map_[the_last_path].end(); it++) {
+                    if ((*it)->name == dentry->name && (*it)->type == dentry->type) {
+                        dentry_map_[the_last_path].erase(it);
+                    }
+                }
+            }
+        }
+    }
+
+    //计算需要释放的大小
+    int alloc_size = 0;
+    //每块空闲块的大小
+    const int block_size = DISK_SIZE / DISK_BLOCK_NUMBER;
+    switch (dentry->type) {
+        case FileType::FILE :
+            alloc_size = dentry->inode->data.size();
+            break;
+        case FileType::FOLDER:
+            alloc_size = 0;
+            break;
+    }
+    //需要释放的空闲块个数
+    int block_count = alloc_size / block_size;
+    int block_groups = (block_count + last_j - 2) / MAX_NUMBER_OF_BLOCKS - 1;
+    int block_per_count = (block_count + last_j - 2) % MAX_NUMBER_OF_BLOCKS;
+    //释放空闲块
+    last_i += block_groups;
+    last_j += block_per_count;
+
+    free_block_list_[last_i][0] = MAX_FREE_BLOCK + block_per_count;
+    for (int i = last_i - 1; i >= 0; i--) {
+        free_block_list_[i][0] = MAX_NUMBER_OF_BLOCKS;
+    }
+
+}
+
+auto DiskManager::get_dentry_list(std::string path) -> std::list<Dentry *> {
+    if (dentry_map_.find(path) == dentry_map_.end()) {
+        return {};
+    }
+    return dentry_map_[path];
+}
+
+

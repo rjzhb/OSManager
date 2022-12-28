@@ -8,6 +8,7 @@
 #include <cstddef>
 #include <list>
 #include "define.h"
+#include <unordered_map>
 
 class DiskManager {
 public:
@@ -16,25 +17,35 @@ public:
 
     ~DiskManager() = default;
 
-    //
+    //分配空闲块
+    void alloc_free_block(Dentry *dentry);
+
+    //释放空闲块
+    void delete_free_block(Dentry *dentry);
 
     //输出所有空闲块
     void print_free_blocks();
 
     //兑换区读写
     void Swapping_read();
+
     void Swapping_write();
+
+    auto get_dentry_list(std::string path) -> std::list<Dentry *>;
+
 private:
 
-    //数据组织
-    std::list<DiskBlock> alloc_block_list_;
+    //数据组织映射
+    std::unordered_map<std::string, std::list<Dentry *>> dentry_map_;
     //空闲块(成组链接法)
     int free_block_list_[MAX_NUMBER_OF_GROUPS][MAX_FREE_BLOCK];
     //指向最后一个空闲块的指针
     int last_i = 0;
     int last_j = 0;
+
+
     //兑换区
-    struct data{
+    struct data {
 
     };
     data ready_to_read[100];
