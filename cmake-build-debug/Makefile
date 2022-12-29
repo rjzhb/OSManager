@@ -204,33 +204,6 @@ src/disk/DiskManager.cpp.s:
 	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.s
 .PHONY : src/disk/DiskManager.cpp.s
 
-src/memory/LRUReplacer.o: src/memory/LRUReplacer.cpp.o
-
-.PHONY : src/memory/LRUReplacer.o
-
-# target to build an object file
-src/memory/LRUReplacer.cpp.o:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/memory/LRUReplacer.cpp.o
-.PHONY : src/memory/LRUReplacer.cpp.o
-
-src/memory/LRUReplacer.i: src/memory/LRUReplacer.cpp.i
-
-.PHONY : src/memory/LRUReplacer.i
-
-# target to preprocess a source file
-src/memory/LRUReplacer.cpp.i:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/memory/LRUReplacer.cpp.i
-.PHONY : src/memory/LRUReplacer.cpp.i
-
-src/memory/LRUReplacer.s: src/memory/LRUReplacer.cpp.s
-
-.PHONY : src/memory/LRUReplacer.s
-
-# target to generate assembly for a file
-src/memory/LRUReplacer.cpp.s:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/memory/LRUReplacer.cpp.s
-.PHONY : src/memory/LRUReplacer.cpp.s
-
 src/memory/MemoryManager.o: src/memory/MemoryManager.cpp.o
 
 .PHONY : src/memory/MemoryManager.o
@@ -303,9 +276,6 @@ help:
 	@echo "... src/disk/DiskManager.o"
 	@echo "... src/disk/DiskManager.i"
 	@echo "... src/disk/DiskManager.s"
-	@echo "... src/memory/LRUReplacer.o"
-	@echo "... src/memory/LRUReplacer.i"
-	@echo "... src/memory/LRUReplacer.s"
 	@echo "... src/memory/MemoryManager.o"
 	@echo "... src/memory/MemoryManager.i"
 	@echo "... src/memory/MemoryManager.s"

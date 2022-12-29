@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/rjzhb/Project/OSManager/main.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/main.cpp.o"
   "/home/rjzhb/Project/OSManager/src/catalog/CatalogManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o"
   "/home/rjzhb/Project/OSManager/src/disk/DiskManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o"
-  "/home/rjzhb/Project/OSManager/src/memory/LRUReplacer.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/memory/LRUReplacer.cpp.o"
   "/home/rjzhb/Project/OSManager/src/memory/MemoryManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o"
   "/home/rjzhb/Project/OSManager/src/thread/ThreadManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o"
   )
