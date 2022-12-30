@@ -1,9 +1,10 @@
-//
-// Created by 86183 on 2022/12/24.
-//
+#ifndef DEFINE_H
+#define DEFINE_H
+
 #include <cstddef>
 #include <string>
 #include <vector>
+#include <list>
 
 //磁盘大小
 constexpr int DISK_SIZE = 40 * 1024;
@@ -27,10 +28,10 @@ constexpr int MEMORY_BLOCK_SIZE = 64;
 constexpr int PER_MEMORY_SIZE = TOTAL_MEMORY_SIZE / MEMORY_BLOCK_SIZE;
 
 //当前路径
-std::string path;
+extern std::string path;
 //计数
-int inum = 0;
-int page_id = 0;
+extern int inum;
+extern int page_id;
 
 enum class FileType {
     FOLDER,
@@ -124,6 +125,6 @@ struct FileThread {
     }
 };
 
-
+#endif
 
 

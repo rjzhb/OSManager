@@ -5,6 +5,8 @@
 #include <iostream>
 #include "ThreadManager.h"
 
+
+
 //互斥锁
 static pthread_mutex_t mutex_A = PTHREAD_MUTEX_INITIALIZER;
 
@@ -39,6 +41,7 @@ static void *data_create_task(void *p) {
     //调用目录管理功能建立目录项
     param->catalogManager->create_file(param->name, param->data);
     pthread_mutex_unlock(&mutex_A);
+    return NULL;
 }
 
 
@@ -52,6 +55,7 @@ static void *data_delete_task(void *p) {
     //调用目录管理删除文件功能删除数据
     param->catalogManager->rmfile(param->name);
     pthread_mutex_unlock(&mutex_A);
+    return NULL;
 }
 
 
@@ -65,6 +69,7 @@ static void *data_call_task(void *p) {
     }
     param->catalogManager->open(param->name);
     pthread_mutex_unlock(&mutex_A);
+    return NULL;
 }
 
 
@@ -104,9 +109,8 @@ void ThreadManager::open(std::string name) {
     pthread_join(pthread, NULL);
 }
 
-ThreadManager::ThreadManager(DiskManager *disk_manager, CatalogManager *catalog_manager,
+ThreadManager::ThreadManager(CatalogManager *catalog_manager,
                              MemoryManager *memory_manager) {
-    disk_manager_ = disk_manager;
     catalog_manager_ = catalog_manager;
     memory_manager_ = memory_manager;
 }

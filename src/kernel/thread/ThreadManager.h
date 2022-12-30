@@ -15,7 +15,7 @@
 class ThreadManager {
 public:
     //构造函数根据自身情况添加参数
-    ThreadManager(DiskManager *disk_manager, CatalogManager *catalog_manager, MemoryManager *memory_manager);
+    ThreadManager(CatalogManager *catalog_manager, MemoryManager *memory_manager);
 
     ~ThreadManager() = default;
 
@@ -31,7 +31,6 @@ public:
 private:
     pthread_t data_generate_thread_;
     pthread_t data_remove_thread_;
-    DiskManager *disk_manager_;
     CatalogManager *catalog_manager_;
     MemoryManager *memory_manager_;
 

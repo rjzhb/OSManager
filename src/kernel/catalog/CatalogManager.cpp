@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include "CatalogManager.h"
-#include "utils.h"
 
 
 void CatalogManager::mkdir(std::string dir_name) {

@@ -177,6 +177,60 @@ src/kernel/catalog/CatalogManager.cpp.s:
 	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.s
 .PHONY : src/kernel/catalog/CatalogManager.cpp.s
 
+src/kernel/common/define.o: src/kernel/common/define.cpp.o
+
+.PHONY : src/kernel/common/define.o
+
+# target to build an object file
+src/kernel/common/define.cpp.o:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/common/define.cpp.o
+.PHONY : src/kernel/common/define.cpp.o
+
+src/kernel/common/define.i: src/kernel/common/define.cpp.i
+
+.PHONY : src/kernel/common/define.i
+
+# target to preprocess a source file
+src/kernel/common/define.cpp.i:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/common/define.cpp.i
+.PHONY : src/kernel/common/define.cpp.i
+
+src/kernel/common/define.s: src/kernel/common/define.cpp.s
+
+.PHONY : src/kernel/common/define.s
+
+# target to generate assembly for a file
+src/kernel/common/define.cpp.s:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/common/define.cpp.s
+.PHONY : src/kernel/common/define.cpp.s
+
+src/kernel/common/utils.o: src/kernel/common/utils.cpp.o
+
+.PHONY : src/kernel/common/utils.o
+
+# target to build an object file
+src/kernel/common/utils.cpp.o:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/common/utils.cpp.o
+.PHONY : src/kernel/common/utils.cpp.o
+
+src/kernel/common/utils.i: src/kernel/common/utils.cpp.i
+
+.PHONY : src/kernel/common/utils.i
+
+# target to preprocess a source file
+src/kernel/common/utils.cpp.i:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/common/utils.cpp.i
+.PHONY : src/kernel/common/utils.cpp.i
+
+src/kernel/common/utils.s: src/kernel/common/utils.cpp.s
+
+.PHONY : src/kernel/common/utils.s
+
+# target to generate assembly for a file
+src/kernel/common/utils.cpp.s:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/common/utils.cpp.s
+.PHONY : src/kernel/common/utils.cpp.s
+
 src/kernel/disk/DiskManager.o: src/kernel/disk/DiskManager.cpp.o
 
 .PHONY : src/kernel/disk/DiskManager.o
@@ -300,6 +354,12 @@ help:
 	@echo "... src/kernel/catalog/CatalogManager.o"
 	@echo "... src/kernel/catalog/CatalogManager.i"
 	@echo "... src/kernel/catalog/CatalogManager.s"
+	@echo "... src/kernel/common/define.o"
+	@echo "... src/kernel/common/define.i"
+	@echo "... src/kernel/common/define.s"
+	@echo "... src/kernel/common/utils.o"
+	@echo "... src/kernel/common/utils.i"
+	@echo "... src/kernel/common/utils.s"
 	@echo "... src/kernel/disk/DiskManager.o"
 	@echo "... src/kernel/disk/DiskManager.i"
 	@echo "... src/kernel/disk/DiskManager.s"

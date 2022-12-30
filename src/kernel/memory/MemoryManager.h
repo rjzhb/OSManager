@@ -5,8 +5,6 @@
 #ifndef OSMANAGER_MEMORYMANAGER_H
 #define OSMANAGER_MEMORYMANAGER_H
 
-
-#include "define.h"
 #include "../disk/DiskManager.h"
 #include <unordered_map>
 #include <list>

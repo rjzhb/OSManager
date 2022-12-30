@@ -99,6 +99,12 @@
 		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/catalog/CatalogManager.h">
 			<Option target="OSManager"/>
 		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/common/define.cpp">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/common/utils.cpp">
+			<Option target="OSManager"/>
+		</Unit>
 		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.cpp">
 			<Option target="OSManager"/>
 		</Unit>
