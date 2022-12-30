@@ -4,6 +4,16 @@
 
 #include "MemoryManager.h"
 
+MemoryManager::MemoryManager(DiskManager *disk_manager) {
+    //初始化free_page_list,大小为8
+    for (int i = 0; i < 8; i++) {
+        Page page;
+        page.pageId = page_id++;
+        page.inode = NULL;
+        free_page_list_.push_back(&page);
+    }
+}
+
 //分配内存
 void MemoryManager::alloc(Inode *inode) {
     if (free_page_list_.empty()) {
@@ -30,8 +40,28 @@ void MemoryManager::alloc(Inode *inode) {
 
 //释放内存
 void MemoryManager::free(Inode *inode) {
-
+    for (auto it: alloc_page_list_) {
+        if (it->inode->name == inode->name) {
+            alloc_page_list_.remove(it);
+        }
+    }
 }
+
+MemoryManager::~MemoryManager() {
+    delete disk_manager_;
+}
+
+
+//判断是否打开了某文件
+bool MemoryManager::judge_memory(std::string name) {
+    for (auto it: alloc_page_list_) {
+        if (it->inode->name == name) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 
 

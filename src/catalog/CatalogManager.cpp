@@ -29,6 +29,7 @@ void CatalogManager::create_file(std::string file_name, std::string data) {
     dentry.createTime = get_system_time();
     dentry.owner = get_user_name();
     Inode inode;
+    inode.name = file_name;
     inode.data = data;
     inode.size = data.size();
     inode.Inum = inum++;

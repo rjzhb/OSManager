@@ -60,7 +60,7 @@ Page *DiskManager::swap_read() {
     return block;
 }
 
-void DiskManager::swap_write(Page* page) {
+void DiskManager::swap_write(Page *page) {
     if (swap_list_.size() >= SWAP_BLOCK_NUMBER) {
         swap_read();
     }
@@ -75,6 +75,14 @@ void DiskManager::alloc_free_block(Dentry *dentry) {
         dentry_list.push_back(dentry);
         dentry_map_[path] = dentry_list;
     } else {
+        //先判断磁盘块是否已经有了此项
+        auto list = dentry_map_[path];
+        for (auto it: list) {
+            if (it->name == dentry->name && it->type == dentry->type) {
+                std::cout << "分配磁盘块失败，该文件已存在" << std::endl;
+                return;
+            }
+        }
         dentry_map_[path].push_back(dentry);
     }
 

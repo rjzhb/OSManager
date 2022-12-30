@@ -57,6 +57,8 @@ enum class FileType {
 struct Inode {
     //编号
     int Inum;
+    //文件名
+    std::string name;
     //文件大小
     size_t size;
     //数据
@@ -82,7 +84,6 @@ struct Dentry {
 };
 
 
-
 //页(内存块)
 struct Page {
     int pageId;
@@ -90,6 +91,20 @@ struct Page {
     Inode *inode;
 };
 
+//某个文件占用的内存块
+struct FilePage{
+    //文件名
+    std::string name;
+    //空闲块个数
+    int freeCount;
+    //文件已经分配块
+    std::list<Page*> pageList;
+
+    FilePage(std::string name){
+        freeCount = 8;
+
+    }
+};
 
 //获取上一级目录字符串
 std::string get_last_path(std::string path) {
