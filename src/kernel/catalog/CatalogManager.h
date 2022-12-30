@@ -6,8 +6,8 @@
 #define OSMANAGER_CATALOGMANAGER_H
 
 
-#include "DiskManager.h"
-#include "MemoryManager.h"
+#include "../disk/DiskManager.h"
+#include "../memory/MemoryManager.h"
 
 class CatalogManager {
 public:

@@ -87,31 +87,40 @@
 		<Unit filename="/home/rjzhb/Project/OSManager/main.cpp">
 			<Option target="OSManager"/>
 		</Unit>
-		<Unit filename="/home/rjzhb/Project/OSManager/src/catalog/CatalogManager.cpp">
-			<Option target="OSManager"/>
-		</Unit>
-		<Unit filename="/home/rjzhb/Project/OSManager/src/disk/DiskManager.cpp">
-			<Option target="OSManager"/>
-		</Unit>
-		<Unit filename="/home/rjzhb/Project/OSManager/src/include/CatalogManager.h">
-			<Option target="OSManager"/>
-		</Unit>
-		<Unit filename="/home/rjzhb/Project/OSManager/src/include/DiskManager.h">
-			<Option target="OSManager"/>
-		</Unit>
-		<Unit filename="/home/rjzhb/Project/OSManager/src/include/MemoryManager.h">
-			<Option target="OSManager"/>
-		</Unit>
-		<Unit filename="/home/rjzhb/Project/OSManager/src/include/ThreadManager.h">
-			<Option target="OSManager"/>
-		</Unit>
 		<Unit filename="/home/rjzhb/Project/OSManager/src/include/define.h">
 			<Option target="OSManager"/>
 		</Unit>
-		<Unit filename="/home/rjzhb/Project/OSManager/src/memory/MemoryManager.cpp">
+		<Unit filename="/home/rjzhb/Project/OSManager/src/include/utils.h">
 			<Option target="OSManager"/>
 		</Unit>
-		<Unit filename="/home/rjzhb/Project/OSManager/src/thread/ThreadManager.cpp">
+		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/catalog/CatalogManager.cpp">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/catalog/CatalogManager.h">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.cpp">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.h">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/memory/MemoryManager.cpp">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/memory/MemoryManager.h">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/thread/ThreadManager.cpp">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/thread/ThreadManager.h">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/user/UserManager.cpp">
+			<Option target="OSManager"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/OSManager/src/user/UserManager.h">
 			<Option target="OSManager"/>
 		</Unit>
 		<Unit filename="/home/rjzhb/Project/OSManager/CMakeLists.txt">

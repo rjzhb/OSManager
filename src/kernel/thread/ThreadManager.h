@@ -7,9 +7,9 @@
 
 
 #include <thread>
-#include "DiskManager.h"
-#include "CatalogManager.h"
-#include "MemoryManager.h"
+#include "../disk/DiskManager.h"
+#include "../catalog/CatalogManager.h"
+#include "../memory/MemoryManager.h"
 #include <pthread.h>
 
 class ThreadManager {
@@ -35,9 +35,10 @@ private:
     CatalogManager *catalog_manager_;
     MemoryManager *memory_manager_;
 
-    //执行线程队列
-    std::list<pthread_t> thread_list_;
-
+    //空闲的执行线程队列
+    std::list<pthread_t> free_thread_list_;
+    //已运行的执行线程队列
+    std::list<FileThread> alloc_thread_list_;
 };
 
 

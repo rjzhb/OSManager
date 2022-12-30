@@ -70,77 +70,92 @@ CMakeFiles/OSManager.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OSManager.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/OSManager/main.cpp -o CMakeFiles/OSManager.dir/main.cpp.s
 
-CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o: CMakeFiles/OSManager.dir/flags.make
-CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o: ../src/disk/DiskManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o -c /home/rjzhb/Project/OSManager/src/disk/DiskManager.cpp
+CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.o: CMakeFiles/OSManager.dir/flags.make
+CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.o: ../src/kernel/disk/DiskManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.o -c /home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.cpp
 
-CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rjzhb/Project/OSManager/src/disk/DiskManager.cpp > CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.i
+CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.cpp > CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.i
 
-CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/OSManager/src/disk/DiskManager.cpp -o CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.s
+CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.cpp -o CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.s
 
-CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o: CMakeFiles/OSManager.dir/flags.make
-CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o: ../src/catalog/CatalogManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o -c /home/rjzhb/Project/OSManager/src/catalog/CatalogManager.cpp
+CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.o: CMakeFiles/OSManager.dir/flags.make
+CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.o: ../src/kernel/catalog/CatalogManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.o -c /home/rjzhb/Project/OSManager/src/kernel/catalog/CatalogManager.cpp
 
-CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rjzhb/Project/OSManager/src/catalog/CatalogManager.cpp > CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.i
+CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rjzhb/Project/OSManager/src/kernel/catalog/CatalogManager.cpp > CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.i
 
-CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/OSManager/src/catalog/CatalogManager.cpp -o CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.s
+CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/OSManager/src/kernel/catalog/CatalogManager.cpp -o CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.s
 
-CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o: CMakeFiles/OSManager.dir/flags.make
-CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o: ../src/memory/MemoryManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o -c /home/rjzhb/Project/OSManager/src/memory/MemoryManager.cpp
+CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.o: CMakeFiles/OSManager.dir/flags.make
+CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.o: ../src/kernel/memory/MemoryManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.o -c /home/rjzhb/Project/OSManager/src/kernel/memory/MemoryManager.cpp
 
-CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rjzhb/Project/OSManager/src/memory/MemoryManager.cpp > CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.i
+CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rjzhb/Project/OSManager/src/kernel/memory/MemoryManager.cpp > CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.i
 
-CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/OSManager/src/memory/MemoryManager.cpp -o CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.s
+CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/OSManager/src/kernel/memory/MemoryManager.cpp -o CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.s
 
-CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o: CMakeFiles/OSManager.dir/flags.make
-CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o: ../src/thread/ThreadManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o -c /home/rjzhb/Project/OSManager/src/thread/ThreadManager.cpp
+CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o: CMakeFiles/OSManager.dir/flags.make
+CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o: ../src/kernel/thread/ThreadManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o -c /home/rjzhb/Project/OSManager/src/kernel/thread/ThreadManager.cpp
 
-CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rjzhb/Project/OSManager/src/thread/ThreadManager.cpp > CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.i
+CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rjzhb/Project/OSManager/src/kernel/thread/ThreadManager.cpp > CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.i
 
-CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/OSManager/src/thread/ThreadManager.cpp -o CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.s
+CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/OSManager/src/kernel/thread/ThreadManager.cpp -o CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.s
+
+CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o: CMakeFiles/OSManager.dir/flags.make
+CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o: ../src/user/UserManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o -c /home/rjzhb/Project/OSManager/src/user/UserManager.cpp
+
+CMakeFiles/OSManager.dir/src/user/UserManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OSManager.dir/src/user/UserManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rjzhb/Project/OSManager/src/user/UserManager.cpp > CMakeFiles/OSManager.dir/src/user/UserManager.cpp.i
+
+CMakeFiles/OSManager.dir/src/user/UserManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OSManager.dir/src/user/UserManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/OSManager/src/user/UserManager.cpp -o CMakeFiles/OSManager.dir/src/user/UserManager.cpp.s
 
 # Object files for target OSManager
 OSManager_OBJECTS = \
 "CMakeFiles/OSManager.dir/main.cpp.o" \
-"CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o" \
-"CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o" \
-"CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o" \
-"CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o"
+"CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.o" \
+"CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.o" \
+"CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.o" \
+"CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o" \
+"CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o"
 
 # External object files for target OSManager
 OSManager_EXTERNAL_OBJECTS =
 
 OSManager: CMakeFiles/OSManager.dir/main.cpp.o
-OSManager: CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o
-OSManager: CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o
-OSManager: CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o
-OSManager: CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o
+OSManager: CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.o
+OSManager: CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.o
+OSManager: CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.o
+OSManager: CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o
+OSManager: CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o
 OSManager: CMakeFiles/OSManager.dir/build.make
 OSManager: CMakeFiles/OSManager.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable OSManager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable OSManager"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OSManager.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

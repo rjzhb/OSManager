@@ -150,113 +150,140 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/catalog/CatalogManager.o: src/catalog/CatalogManager.cpp.o
+src/kernel/catalog/CatalogManager.o: src/kernel/catalog/CatalogManager.cpp.o
 
-.PHONY : src/catalog/CatalogManager.o
-
-# target to build an object file
-src/catalog/CatalogManager.cpp.o:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o
-.PHONY : src/catalog/CatalogManager.cpp.o
-
-src/catalog/CatalogManager.i: src/catalog/CatalogManager.cpp.i
-
-.PHONY : src/catalog/CatalogManager.i
-
-# target to preprocess a source file
-src/catalog/CatalogManager.cpp.i:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.i
-.PHONY : src/catalog/CatalogManager.cpp.i
-
-src/catalog/CatalogManager.s: src/catalog/CatalogManager.cpp.s
-
-.PHONY : src/catalog/CatalogManager.s
-
-# target to generate assembly for a file
-src/catalog/CatalogManager.cpp.s:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.s
-.PHONY : src/catalog/CatalogManager.cpp.s
-
-src/disk/DiskManager.o: src/disk/DiskManager.cpp.o
-
-.PHONY : src/disk/DiskManager.o
+.PHONY : src/kernel/catalog/CatalogManager.o
 
 # target to build an object file
-src/disk/DiskManager.cpp.o:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o
-.PHONY : src/disk/DiskManager.cpp.o
+src/kernel/catalog/CatalogManager.cpp.o:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.o
+.PHONY : src/kernel/catalog/CatalogManager.cpp.o
 
-src/disk/DiskManager.i: src/disk/DiskManager.cpp.i
+src/kernel/catalog/CatalogManager.i: src/kernel/catalog/CatalogManager.cpp.i
 
-.PHONY : src/disk/DiskManager.i
+.PHONY : src/kernel/catalog/CatalogManager.i
 
 # target to preprocess a source file
-src/disk/DiskManager.cpp.i:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.i
-.PHONY : src/disk/DiskManager.cpp.i
+src/kernel/catalog/CatalogManager.cpp.i:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.i
+.PHONY : src/kernel/catalog/CatalogManager.cpp.i
 
-src/disk/DiskManager.s: src/disk/DiskManager.cpp.s
+src/kernel/catalog/CatalogManager.s: src/kernel/catalog/CatalogManager.cpp.s
 
-.PHONY : src/disk/DiskManager.s
+.PHONY : src/kernel/catalog/CatalogManager.s
 
 # target to generate assembly for a file
-src/disk/DiskManager.cpp.s:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.s
-.PHONY : src/disk/DiskManager.cpp.s
+src/kernel/catalog/CatalogManager.cpp.s:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.s
+.PHONY : src/kernel/catalog/CatalogManager.cpp.s
 
-src/memory/MemoryManager.o: src/memory/MemoryManager.cpp.o
+src/kernel/disk/DiskManager.o: src/kernel/disk/DiskManager.cpp.o
 
-.PHONY : src/memory/MemoryManager.o
+.PHONY : src/kernel/disk/DiskManager.o
 
 # target to build an object file
-src/memory/MemoryManager.cpp.o:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o
-.PHONY : src/memory/MemoryManager.cpp.o
+src/kernel/disk/DiskManager.cpp.o:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.o
+.PHONY : src/kernel/disk/DiskManager.cpp.o
 
-src/memory/MemoryManager.i: src/memory/MemoryManager.cpp.i
+src/kernel/disk/DiskManager.i: src/kernel/disk/DiskManager.cpp.i
 
-.PHONY : src/memory/MemoryManager.i
+.PHONY : src/kernel/disk/DiskManager.i
 
 # target to preprocess a source file
-src/memory/MemoryManager.cpp.i:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.i
-.PHONY : src/memory/MemoryManager.cpp.i
+src/kernel/disk/DiskManager.cpp.i:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.i
+.PHONY : src/kernel/disk/DiskManager.cpp.i
 
-src/memory/MemoryManager.s: src/memory/MemoryManager.cpp.s
+src/kernel/disk/DiskManager.s: src/kernel/disk/DiskManager.cpp.s
 
-.PHONY : src/memory/MemoryManager.s
+.PHONY : src/kernel/disk/DiskManager.s
 
 # target to generate assembly for a file
-src/memory/MemoryManager.cpp.s:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.s
-.PHONY : src/memory/MemoryManager.cpp.s
+src/kernel/disk/DiskManager.cpp.s:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.s
+.PHONY : src/kernel/disk/DiskManager.cpp.s
 
-src/thread/ThreadManager.o: src/thread/ThreadManager.cpp.o
+src/kernel/memory/MemoryManager.o: src/kernel/memory/MemoryManager.cpp.o
 
-.PHONY : src/thread/ThreadManager.o
+.PHONY : src/kernel/memory/MemoryManager.o
 
 # target to build an object file
-src/thread/ThreadManager.cpp.o:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o
-.PHONY : src/thread/ThreadManager.cpp.o
+src/kernel/memory/MemoryManager.cpp.o:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.o
+.PHONY : src/kernel/memory/MemoryManager.cpp.o
 
-src/thread/ThreadManager.i: src/thread/ThreadManager.cpp.i
+src/kernel/memory/MemoryManager.i: src/kernel/memory/MemoryManager.cpp.i
 
-.PHONY : src/thread/ThreadManager.i
+.PHONY : src/kernel/memory/MemoryManager.i
 
 # target to preprocess a source file
-src/thread/ThreadManager.cpp.i:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.i
-.PHONY : src/thread/ThreadManager.cpp.i
+src/kernel/memory/MemoryManager.cpp.i:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.i
+.PHONY : src/kernel/memory/MemoryManager.cpp.i
 
-src/thread/ThreadManager.s: src/thread/ThreadManager.cpp.s
+src/kernel/memory/MemoryManager.s: src/kernel/memory/MemoryManager.cpp.s
 
-.PHONY : src/thread/ThreadManager.s
+.PHONY : src/kernel/memory/MemoryManager.s
 
 # target to generate assembly for a file
-src/thread/ThreadManager.cpp.s:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.s
-.PHONY : src/thread/ThreadManager.cpp.s
+src/kernel/memory/MemoryManager.cpp.s:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.s
+.PHONY : src/kernel/memory/MemoryManager.cpp.s
+
+src/kernel/thread/ThreadManager.o: src/kernel/thread/ThreadManager.cpp.o
+
+.PHONY : src/kernel/thread/ThreadManager.o
+
+# target to build an object file
+src/kernel/thread/ThreadManager.cpp.o:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o
+.PHONY : src/kernel/thread/ThreadManager.cpp.o
+
+src/kernel/thread/ThreadManager.i: src/kernel/thread/ThreadManager.cpp.i
+
+.PHONY : src/kernel/thread/ThreadManager.i
+
+# target to preprocess a source file
+src/kernel/thread/ThreadManager.cpp.i:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.i
+.PHONY : src/kernel/thread/ThreadManager.cpp.i
+
+src/kernel/thread/ThreadManager.s: src/kernel/thread/ThreadManager.cpp.s
+
+.PHONY : src/kernel/thread/ThreadManager.s
+
+# target to generate assembly for a file
+src/kernel/thread/ThreadManager.cpp.s:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.s
+.PHONY : src/kernel/thread/ThreadManager.cpp.s
+
+src/user/UserManager.o: src/user/UserManager.cpp.o
+
+.PHONY : src/user/UserManager.o
+
+# target to build an object file
+src/user/UserManager.cpp.o:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o
+.PHONY : src/user/UserManager.cpp.o
+
+src/user/UserManager.i: src/user/UserManager.cpp.i
+
+.PHONY : src/user/UserManager.i
+
+# target to preprocess a source file
+src/user/UserManager.cpp.i:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/user/UserManager.cpp.i
+.PHONY : src/user/UserManager.cpp.i
+
+src/user/UserManager.s: src/user/UserManager.cpp.s
+
+.PHONY : src/user/UserManager.s
+
+# target to generate assembly for a file
+src/user/UserManager.cpp.s:
+	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/user/UserManager.cpp.s
+.PHONY : src/user/UserManager.cpp.s
 
 # Help Target
 help:
@@ -270,18 +297,21 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/catalog/CatalogManager.o"
-	@echo "... src/catalog/CatalogManager.i"
-	@echo "... src/catalog/CatalogManager.s"
-	@echo "... src/disk/DiskManager.o"
-	@echo "... src/disk/DiskManager.i"
-	@echo "... src/disk/DiskManager.s"
-	@echo "... src/memory/MemoryManager.o"
-	@echo "... src/memory/MemoryManager.i"
-	@echo "... src/memory/MemoryManager.s"
-	@echo "... src/thread/ThreadManager.o"
-	@echo "... src/thread/ThreadManager.i"
-	@echo "... src/thread/ThreadManager.s"
+	@echo "... src/kernel/catalog/CatalogManager.o"
+	@echo "... src/kernel/catalog/CatalogManager.i"
+	@echo "... src/kernel/catalog/CatalogManager.s"
+	@echo "... src/kernel/disk/DiskManager.o"
+	@echo "... src/kernel/disk/DiskManager.i"
+	@echo "... src/kernel/disk/DiskManager.s"
+	@echo "... src/kernel/memory/MemoryManager.o"
+	@echo "... src/kernel/memory/MemoryManager.i"
+	@echo "... src/kernel/memory/MemoryManager.s"
+	@echo "... src/kernel/thread/ThreadManager.o"
+	@echo "... src/kernel/thread/ThreadManager.i"
+	@echo "... src/kernel/thread/ThreadManager.s"
+	@echo "... src/user/UserManager.o"
+	@echo "... src/user/UserManager.i"
+	@echo "... src/user/UserManager.s"
 .PHONY : help
 
 

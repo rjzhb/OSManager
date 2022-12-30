@@ -38,6 +38,7 @@ void MemoryManager::free(Inode *inode) {
     for (auto it: alloc_page_list_) {
         if (it->inode->name == inode->name) {
             alloc_page_list_.remove(it);
+            free_page_list_.push_back(it);
         }
     }
 }

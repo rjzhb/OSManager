@@ -5,10 +5,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/rjzhb/Project/OSManager/main.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/main.cpp.o"
-  "/home/rjzhb/Project/OSManager/src/catalog/CatalogManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/catalog/CatalogManager.cpp.o"
-  "/home/rjzhb/Project/OSManager/src/disk/DiskManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/disk/DiskManager.cpp.o"
-  "/home/rjzhb/Project/OSManager/src/memory/MemoryManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/memory/MemoryManager.cpp.o"
-  "/home/rjzhb/Project/OSManager/src/thread/ThreadManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/thread/ThreadManager.cpp.o"
+  "/home/rjzhb/Project/OSManager/src/kernel/catalog/CatalogManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.o"
+  "/home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.o"
+  "/home/rjzhb/Project/OSManager/src/kernel/memory/MemoryManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.o"
+  "/home/rjzhb/Project/OSManager/src/kernel/thread/ThreadManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o"
+  "/home/rjzhb/Project/OSManager/src/user/UserManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

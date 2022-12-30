@@ -1,6 +1,6 @@
 #include <iostream>
-#include "DiskManager.h"
-#include "CatalogManager.h"
+#include "src/kernel/disk/DiskManager.h"
+#include "src/kernel/catalog/CatalogManager.h"
 
 
 

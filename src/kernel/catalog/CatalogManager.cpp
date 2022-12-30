@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "CatalogManager.h"
+#include "utils.h"
 
 
 void CatalogManager::mkdir(std::string dir_name) {
@@ -61,16 +62,16 @@ void CatalogManager::open(std::string file_name) {
     auto list = disk_manager_->get_dentry_list(path);
     Inode *inode;
     bool flag = false;
-    for(auto it:list){
-        if(it->type == FileType::FILE && it->name == file_name){
-           inode = it->inode;
-           flag = true;
-           break;
+    for (auto it: list) {
+        if (it->type == FileType::FILE && it->name == file_name) {
+            inode = it->inode;
+            flag = true;
+            break;
         }
     }
 
-    if(!flag){
-        std::cout <<"该文件不存在" <<std::endl;
+    if (!flag) {
+        std::cout << "该文件不存在" << std::endl;
     }
 
     //读入内存
@@ -78,6 +79,10 @@ void CatalogManager::open(std::string file_name) {
     std::cout << inode->data << std::endl;
 }
 
-void CatalogManager::close(std::string file_name) {
 
+//关闭某个文件
+void CatalogManager::close(std::string file_name) {
+    Inode inode;
+    inode.name = file_name;
+    memory_manager_->free(&inode);
 }

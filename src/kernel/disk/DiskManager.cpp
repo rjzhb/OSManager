@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include "DiskManager.h"
+#include "utils.h"
 
 DiskManager::DiskManager() {
     //初始化空闲块

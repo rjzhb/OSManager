@@ -61,7 +61,7 @@ static void *data_call_task(void *p) {
     CallParam *param = reinterpret_cast<CallParam *>(p);
     if (param->memory_manager->judge_memory(param->name)) {
         std::cout << "打开文件失败，该文件正处于打开状态" << std::endl;
-        return;
+        return NULL;
     }
     param->catalogManager->open(param->name);
     pthread_mutex_unlock(&mutex_A);
@@ -85,7 +85,23 @@ void ThreadManager::remove(std::string name) {
 }
 
 void ThreadManager::open(std::string name) {
-    //用户执行线程一共8个
+    if (free_thread_list_.empty()) {
+        //需要关闭最早打开的文件
+        FileThread file_thread = alloc_thread_list_.front();
+        //释放内存
+        Inode inode;
+        inode.name = file_thread.name;
+        catalog_manager_->close(name);
+        alloc_thread_list_.pop_front();
+        free_thread_list_.push_back(file_thread.pthread);
+    }
+    //为任务分配线程
+    pthread_t pthread = free_thread_list_.front();
+    free_thread_list_.pop_front();
+    using CallParam = DeleteParam;
+    CallParam param(name, memory_manager_, catalog_manager_);
+    pthread_create(&pthread, NULL, &data_call_task, &param);
+    pthread_join(pthread, NULL);
 }
 
 ThreadManager::ThreadManager(DiskManager *disk_manager, CatalogManager *catalog_manager,
