@@ -2,13 +2,10 @@
 // Created by 86183 on 2022/12/24.
 //
 
-#ifndef OSMANAGER_DEFINE_H
-#define OSMANAGER_DEFINE_H
 
 #include <cstddef>
 #include <string>
 #include <vector>
-
 
 #ifdef linux
 
@@ -92,17 +89,40 @@ struct Page {
 };
 
 //某个文件占用的内存块
-struct FilePage{
-    //文件名
-    std::string name;
+struct FilePage {
+    //文件索引
+    Inode *inode;
     //空闲块个数
     int freeCount;
     //文件已经分配块
-    std::list<Page*> pageList;
+    std::list<Page *> pageList;
 
-    FilePage(std::string name){
+    FilePage() {
         freeCount = 8;
+    }
 
+    FilePage(Inode *inode) {
+        freeCount = 8;
+        int block_count = inode->data.size() % PER_MEMORY_SIZE == 0 ? inode->data.size() / PER_MEMORY_SIZE :
+                          inode->data.size() / PER_MEMORY_SIZE + 1;
+        //分解字符串
+        std::string data = inode->data;
+        int pos = 0;
+        for (int i = 0; i < 8; i++) {
+            Page page;
+            page.pageId = page_id++;
+            Inode inode;
+            inode.data = data.substr(pos, PER_MEMORY_SIZE);
+            pos += PER_MEMORY_SIZE;
+            page.inode = &inode;
+            pageList.push_back(&page);
+        }
+        if (block_count > 8) {
+            //启用LRU算法
+            Page *page = pageList.front();
+            //替换最少使用的部分字符串
+            page->inode->data = data.substr(pos, inode->data.size() % PER_MEMORY_SIZE);
+        }
     }
 };
 
@@ -163,4 +183,5 @@ std::string type_to_string(FileType type) {
     }
 }
 
-#endif //OSMANAGER_DEFINE_H
+
+

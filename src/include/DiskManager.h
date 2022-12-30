@@ -27,9 +27,9 @@ public:
     void print_free_blocks();
 
     //兑换区读写
-    Page *swap_read();
+    FilePage *swap_read();
 
-    void swap_write(Page *page);
+    void swap_write(FilePage *page);
 
     auto get_dentry_list(std::string path) -> std::list<Dentry *>;
 
@@ -44,7 +44,7 @@ private:
     int last_j = 0;
 
     //兑换区
-    std::list<Page *> swap_list_;
+    std::list<FilePage *> swap_list_;
 };
 
 

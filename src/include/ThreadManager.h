@@ -25,27 +25,19 @@ public:
     //提供给用户的数据删除接口
     void remove(std::string name);
 
+    //提供给用户的打开文件
+    void open(std::string name);
+
 private:
-    std::thread data_generate_thread_;
-    std::thread data_remove_thread_;
+    pthread_t data_generate_thread_;
+    pthread_t data_remove_thread_;
     DiskManager *disk_manager_;
     CatalogManager *catalog_manager_;
     MemoryManager *memory_manager_;
 
-    //一共只有
     //执行线程队列
     std::list<pthread_t> thread_list_;
-    //互斥锁
-    pthread_mutex_t mutex_A = PTHREAD_MUTEX_INITIALIZER;
 
-    //数据生成
-    void data_create_task(std::string name, std::string data);
-
-    //删除数据
-    void data_delete_task(std::string name);
-
-    //将文件数据从外存调入内存
-    void data_call_task(std::string name);
 };
 
 

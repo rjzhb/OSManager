@@ -23,13 +23,14 @@ public:
     void free(Inode *inode);
 
     bool judge_memory(std::string name);
+
 private:
     //页表
     std::unordered_map<int, void *> page_table_;
     //已分配内存页
-    std::list<Page*> alloc_page_list_;
+    std::list<FilePage *> alloc_page_list_;
     //空闲内存页
-    std::list<FilePage*> free_page_list_;
+    std::list<FilePage *> free_page_list_;
 
     DiskManager *disk_manager_;
 

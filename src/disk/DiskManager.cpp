@@ -51,16 +51,16 @@ void DiskManager::print_free_blocks() {
     }
 }
 
-Page *DiskManager::swap_read() {
+FilePage *DiskManager::swap_read() {
     if (swap_list_.empty()) {
         std::cout << "兑换区为空" << std::endl;
     }
-    Page *block = swap_list_.front();
+    FilePage *block = swap_list_.front();
     swap_list_.pop_front();
     return block;
 }
 
-void DiskManager::swap_write(Page *page) {
+void DiskManager::swap_write(FilePage *page) {
     if (swap_list_.size() >= SWAP_BLOCK_NUMBER) {
         swap_read();
     }
