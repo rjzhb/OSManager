@@ -183,15 +183,23 @@ void DiskManager::delete_free_block(Dentry *dentry) {
             alloc_size = 0;
             return;
     }
-    //需要释放的空闲块个数
-    int block_count = alloc_size / block_size;
-    int block_groups = (block_count + last_j - 2) / MAX_NUMBER_OF_BLOCKS - 1;
-    int block_per_count = (block_count + last_j - 2) % MAX_NUMBER_OF_BLOCKS;
-    //释放空闲块
-    last_i += block_groups;
-    last_j += block_per_count;
 
-    free_block_list_[last_i][0] = MAX_FREE_BLOCK + block_per_count;
+    //需要释放的空闲块个数
+    int block_count = alloc_size % block_size == 0 ? alloc_size / block_size : alloc_size / block_size + 1;
+    int last_group_count = MAX_NUMBER_OF_BLOCKS - (last_j - 1);
+    if (block_count <= last_group_count) {
+        last_j += block_count;
+        free_block_list_[last_i][0] += block_count;
+    } else {
+        free_block_list_[last_i][0] = MAX_NUMBER_OF_BLOCKS;
+        int temp_1 = (block_count - last_group_count) / MAX_NUMBER_OF_BLOCKS;
+        int temp_2 = (block_count - last_group_count) % MAX_NUMBER_OF_BLOCKS;
+        last_i += temp_1 + 1;
+        last_j = temp_2 + 1;
+        free_block_list_[last_i][0] = last_j - 1;
+    }
+
+
     for (int i = last_i - 1; i >= 0; i--) {
         free_block_list_[i][0] = MAX_NUMBER_OF_BLOCKS;
     }

@@ -19,7 +19,7 @@ void print_help() {
     std::cout << "rmdir----------------删除文件夹" << std::endl;
     std::cout << "create----------------创建文件" << std::endl;
     std::cout << "create test-----------一次性创建8个文件提供测试" << std::endl;
-    std::cout << "open test-----------一次性打开8个文件提供测试" << std::endl;
+    std::cout << "open test-------------一次性打开8个文件提供测试" << std::endl;
     std::cout << "remove----------------删除文件" << std::endl;
     std::cout << "open------------------打开文件" << std::endl;
     std::cout << "show memory------------显示内存信息" << std::endl;
