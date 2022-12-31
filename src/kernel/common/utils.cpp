@@ -15,7 +15,6 @@
 #endif
 
 
-
 //获取上一级目录字符串
 std::string get_last_path(std::string path) {
     if (path == "/")return "/";
@@ -36,7 +35,8 @@ std::string get_system_time() {
     time(&nowtime);
     p = localtime(&nowtime);
     std::string res =
-            std::to_string(p->tm_year) + "年" + std::to_string(p->tm_mon) + "月" + std::to_string(p->tm_mday) + "日" +
+            std::to_string(1900 + p->tm_year) + "年" + std::to_string(p->tm_mon) + "月" + std::to_string(p->tm_mday) +
+            "日" +
             std::to_string(p->tm_hour) + "时" + std::to_string(p->tm_min) + "分" +
             std::to_string(p->tm_sec) + "秒";
     return res;

@@ -17,7 +17,7 @@ public:
     //构造函数根据自身情况添加参数
     ThreadManager(CatalogManager *catalog_manager, MemoryManager *memory_manager);
 
-    ~ThreadManager() = default;
+    ~ThreadManager();
 
     //提供给用户的数据生成接口
     void create(std::string name, std::string data);

@@ -12,9 +12,9 @@
 class CatalogManager {
 public:
     //构造函数根据自身情况添加参数
-    CatalogManager(DiskManager *disk_manager);
+    CatalogManager(DiskManager *disk_manager, MemoryManager *memory_manager);
 
-    ~CatalogManager() = default;
+    ~CatalogManager();
 
 
     //新建空目录

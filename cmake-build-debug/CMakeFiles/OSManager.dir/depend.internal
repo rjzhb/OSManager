@@ -5,7 +5,10 @@ CMakeFiles/OSManager.dir/main.cpp.o
  ../src/include/define.h
  ../src/include/utils.h
  /home/rjzhb/Project/OSManager/main.cpp
+ /home/rjzhb/Project/OSManager/src/kernel/catalog/CatalogManager.h
  /home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.h
+ /home/rjzhb/Project/OSManager/src/kernel/memory/MemoryManager.h
+ /home/rjzhb/Project/OSManager/src/kernel/thread/ThreadManager.h
 CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.o
  ../src/include/define.h
  ../src/include/utils.h

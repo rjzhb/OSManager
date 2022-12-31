@@ -4,7 +4,10 @@
 CMakeFiles/OSManager.dir/main.cpp.o: ../src/include/define.h
 CMakeFiles/OSManager.dir/main.cpp.o: ../src/include/utils.h
 CMakeFiles/OSManager.dir/main.cpp.o: ../main.cpp
+CMakeFiles/OSManager.dir/main.cpp.o: ../src/kernel/catalog/CatalogManager.h
 CMakeFiles/OSManager.dir/main.cpp.o: ../src/kernel/disk/DiskManager.h
+CMakeFiles/OSManager.dir/main.cpp.o: ../src/kernel/memory/MemoryManager.h
+CMakeFiles/OSManager.dir/main.cpp.o: ../src/kernel/thread/ThreadManager.h
 
 CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.o: ../src/include/define.h
 CMakeFiles/OSManager.dir/src/kernel/catalog/CatalogManager.cpp.o: ../src/include/utils.h

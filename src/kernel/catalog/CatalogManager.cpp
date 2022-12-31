@@ -7,12 +7,12 @@
 
 
 void CatalogManager::mkdir(std::string dir_name) {
-    Dentry dentry;
-    dentry.type = FileType::FOLDER;
-    dentry.name = dir_name;
-    dentry.createTime = get_system_time();
-    dentry.owner = get_user_name();
-    disk_manager_->alloc_free_block(&dentry);
+    Dentry *dentry = new Dentry();
+    dentry->type = FileType::FOLDER;
+    dentry->name = dir_name;
+    dentry->createTime = get_system_time();
+    dentry->owner = get_user_name();
+    disk_manager_->alloc_free_block(dentry);
 }
 
 void CatalogManager::rmdir(std::string dir_name) {
@@ -23,23 +23,23 @@ void CatalogManager::rmdir(std::string dir_name) {
 }
 
 void CatalogManager::create_file(std::string file_name, std::string data) {
-    Dentry dentry;
-    dentry.type = FileType::FILE;
-    dentry.name = file_name;
-    dentry.createTime = get_system_time();
-    dentry.owner = get_user_name();
-    Inode inode;
-    inode.name = file_name;
-    inode.data = data;
-    inode.size = data.size();
-    inode.Inum = inum++;
-    dentry.inode = &inode;
-    disk_manager_->alloc_free_block(&dentry);
+    Dentry *dentry = new Dentry();
+    dentry->type = FileType::FILE;
+    dentry->name = file_name;
+    dentry->createTime = get_system_time();
+    dentry->owner = get_user_name();
+    Inode* inode = new Inode();
+    inode->name = file_name;
+    inode->data = data;
+    inode->size = data.size();
+    inode->Inum = inum++;
+    dentry->inode = inode;
+    disk_manager_->alloc_free_block(dentry);
 }
 
 void CatalogManager::rmfile(std::string file_name) {
     Dentry dentry;
-    dentry.type = FileType::FOLDER;
+    dentry.type = FileType::FILE;
     dentry.name = file_name;
     disk_manager_->delete_free_block(&dentry);
 }
@@ -53,7 +53,15 @@ void CatalogManager::ls() {
 }
 
 void CatalogManager::cd(std::string dir_name) {
-    path = path + "/" + dir_name + "/";
+    if (dir_name == "../") {
+        //返回上一级目录
+        if (path == "/") {
+            return;
+        }
+        path = get_last_path(path);
+        return;
+    }
+    path = path + dir_name + "/";
 }
 
 void CatalogManager::open(std::string file_name) {
@@ -84,4 +92,15 @@ void CatalogManager::close(std::string file_name) {
     Inode inode;
     inode.name = file_name;
     memory_manager_->free(&inode);
+}
+
+CatalogManager::CatalogManager(DiskManager *disk_manager, MemoryManager *memory_manager) {
+    disk_manager_ = disk_manager;
+    memory_manager_ = memory_manager;
+
+}
+
+CatalogManager::~CatalogManager() {
+    delete disk_manager_;
+    delete memory_manager_;
 }

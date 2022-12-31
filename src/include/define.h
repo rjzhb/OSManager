@@ -90,20 +90,21 @@ struct FilePage {
     }
 
     FilePage(Inode *inode) {
+        this->inode = inode;
         freeCount = 8;
         int block_count = inode->data.size() % PER_MEMORY_SIZE == 0 ? inode->data.size() / PER_MEMORY_SIZE :
                           inode->data.size() / PER_MEMORY_SIZE + 1;
         //分解字符串
         std::string data = inode->data;
         int pos = 0;
-        for (int i = 0; i < 8; i++) {
-            Page page;
-            page.pageId = page_id++;
-            Inode inode;
-            inode.data = data.substr(pos, PER_MEMORY_SIZE);
+        for (int i = 0; i < 8 && pos < data.size(); i++) {
+            Page *page = new Page();
+            page->pageId = page_id++;
+            Inode *inode = new Inode();
+            inode->data = data.substr(pos, PER_MEMORY_SIZE);
             pos += PER_MEMORY_SIZE;
-            page.inode = &inode;
-            pageList.push_back(&page);
+            page->inode = inode;
+            pageList.push_back(page);
         }
         if (block_count > 8) {
             //启用LRU算法

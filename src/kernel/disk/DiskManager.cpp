@@ -137,6 +137,8 @@ void DiskManager::delete_free_block(Dentry *dentry) {
     //删除链表中的dentry
     for (auto it: dentry_map_[path]) {
         if (it->name == dentry->name && it->type == dentry->type) {
+            //从磁盘中找到的数据填充到dentry里
+            dentry->inode = it->inode;
             dentry_map_[path].remove(it);
             flag = true;
             break;

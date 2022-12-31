@@ -6,7 +6,6 @@
 #include "ThreadManager.h"
 
 
-
 //互斥锁
 static pthread_mutex_t mutex_A = PTHREAD_MUTEX_INITIALIZER;
 
@@ -113,4 +112,15 @@ ThreadManager::ThreadManager(CatalogManager *catalog_manager,
                              MemoryManager *memory_manager) {
     catalog_manager_ = catalog_manager;
     memory_manager_ = memory_manager;
+    //初始化空闲的执行线程队列
+    for (int i = 0; i < 8; i++) {
+        pthread_t thread;
+        free_thread_list_.push_back(thread);
+    }
+}
+
+ThreadManager::~ThreadManager() {
+    delete catalog_manager_;
+    delete memory_manager_;
+
 }

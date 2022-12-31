@@ -28,8 +28,8 @@ void MemoryManager::alloc(Inode *inode) {
         page_id++;
     } else {
         free_page_list_.pop_front();
-        FilePage page(inode);
-        alloc_page_list_.push_front(&page);
+        FilePage *page = new FilePage(inode);
+        alloc_page_list_.push_front(page);
     }
 
 }
