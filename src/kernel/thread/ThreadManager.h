@@ -28,6 +28,8 @@ public:
     //提供给用户的打开文件
     void open(std::string name);
 
+    void show_thread();
+
 private:
     pthread_t data_generate_thread_;
     pthread_t data_remove_thread_;
@@ -35,9 +37,9 @@ private:
     MemoryManager *memory_manager_;
 
     //空闲的执行线程队列
-    std::list<pthread_t> free_thread_list_;
+    std::list<int> free_thread_list_;
     //已运行的执行线程队列
-    std::list<FileThread> alloc_thread_list_;
+    std::list<FileThread *> alloc_thread_list_;
 };
 
 

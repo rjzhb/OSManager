@@ -22,6 +22,7 @@ public:
 
     bool judge_memory(std::string name);
 
+    void show_memory();
 private:
     //页表
     std::unordered_map<int, void *> page_table_;

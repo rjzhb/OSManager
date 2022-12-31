@@ -28,12 +28,6 @@ pwd.h
 Windows.h
 -
 
-/home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.cpp
-iostream
--
-DiskManager.h
-/home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.h
-
 /home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.h
 cstddef
 -
@@ -43,4 +37,20 @@ unordered_map
 -
 utils.h
 /home/rjzhb/Project/OSManager/src/kernel/disk/utils.h
+queue
+-
+
+/home/rjzhb/Project/OSManager/src/kernel/memory/MemoryManager.cpp
+iostream
+-
+MemoryManager.h
+/home/rjzhb/Project/OSManager/src/kernel/memory/MemoryManager.h
+
+/home/rjzhb/Project/OSManager/src/kernel/memory/MemoryManager.h
+../disk/DiskManager.h
+/home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.h
+unordered_map
+-
+list
+-
 

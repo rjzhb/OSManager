@@ -22,7 +22,7 @@ DiskManager::DiskManager() {
         }
 
         //下标0表示每组的空闲块数量
-        free_block_list_[i][0] = count_free;
+        free_block_list_[i][0] = count_free - 1;
     }
 
     last_i = MAX_NUMBER_OF_GROUPS - 1;
@@ -33,9 +33,9 @@ DiskManager::DiskManager() {
 
 
 void DiskManager::print_free_blocks() {
-    std::cout << "初始空闲块链：" << std::endl
-              << "组别 " << "空闲块数 " << "上一组"
-              << " 空闲块 空闲块\t...\t...\t...\t...\t...\t...\t..."
+    std::cout << "空闲块列表：" << std::endl
+              << "组别\t" << "空闲块数\t" << "上一组\t"
+              << "空闲块\t空闲块\t...\t...\t...\t...\t...\t...\t..."
               << std::endl;
 
     for (int i = 0; i < last_i + 1; i++) {
@@ -51,17 +51,18 @@ void DiskManager::print_free_blocks() {
     }
 }
 
-FilePage *DiskManager::swap_read() {
+Page *DiskManager::swap_read() {
     if (swap_list_.empty()) {
         std::cout << "兑换区为空" << std::endl;
+        return NULL;
     }
-    FilePage *block = swap_list_.front();
+    Page *block = swap_list_.front();
     swap_list_.pop_front();
     return block;
 }
 
-void DiskManager::swap_write(FilePage *page) {
-    if (swap_list_.size() >= SWAP_BLOCK_NUMBER) {
+void DiskManager::swap_write(Page *page) {
+    if (!swap_list_.empty() && swap_list_.size() >= SWAP_BLOCK_NUMBER) {
         swap_read();
     }
     swap_list_.push_back(page);
@@ -109,18 +110,24 @@ void DiskManager::alloc_free_block(Dentry *dentry) {
     }
 
     //需要分配的空闲块个数
-    int block_count = alloc_size / block_size;
-    int block_groups = (block_count + MAX_FREE_BLOCK - last_j) / MAX_NUMBER_OF_BLOCKS;
-    int block_per_count = (block_count + MAX_FREE_BLOCK - last_j) % MAX_NUMBER_OF_BLOCKS;
-    //分配空闲块
-    last_i -= block_groups;
-    last_j -= block_per_count;
+    int block_count = alloc_size % block_size == 0 ? alloc_size / block_size : alloc_size / block_size + 1;
+    int last_group_count = last_j - 1;
+    if (block_count <= last_group_count) {
+        last_j -= block_count;
+        free_block_list_[last_i][0] = MAX_NUMBER_OF_BLOCKS - block_count;
+    } else {
+        free_block_list_[last_i][0] = 0;
+        int temp_1 = (block_count - last_group_count) / MAX_NUMBER_OF_BLOCKS;
+        int temp_2 = (block_count - last_group_count) % MAX_NUMBER_OF_BLOCKS;
+        last_i -= temp_1 + 1;
+        last_j = MAX_NUMBER_OF_BLOCKS + 1 - temp_2;
+        free_block_list_[last_i][0] = last_j - 1;
+    }
 
     if (last_i < 0) {
         std::cout << "error: 分配空闲块失败，原因：空闲块不足" << std::endl;
     }
 
-    free_block_list_[last_i][0] = MAX_FREE_BLOCK - block_per_count;
     for (int i = last_i + 1; i < MAX_NUMBER_OF_GROUPS; i++) {
         free_block_list_[i][0] = 0;
     }
@@ -196,6 +203,21 @@ auto DiskManager::get_dentry_list(std::string path) -> std::list<Dentry *> {
         return {};
     }
     return dentry_map_[path];
+}
+
+void DiskManager::show_disk() {
+    print_free_blocks();
+    std::cout << "----------------------------------------------" << std::endl;
+    std::cout << "占用的磁盘块：" << std::endl;
+    std::cout << "所在目录\t" << "文件名\t" << "类型\t" << "所有者\t" << "创建时间\t" << std::endl;
+    for (auto it: dentry_map_) {
+        for (auto item: it.second) {
+            if (item->type == FileType::FOLDER)continue;
+            std::cout << it.first << "\t" << item->name << "\t" << type_to_string(item->type) << "\t" << item->owner
+                      << "\t"
+                      << item->createTime << std::endl;
+        }
+    }
 }
 
 

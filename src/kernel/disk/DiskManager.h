@@ -9,7 +9,7 @@
 #include <list>
 #include <unordered_map>
 #include "utils.h"
-
+#include <queue>
 
 class DiskManager {
 public:
@@ -28,11 +28,13 @@ public:
     void print_free_blocks();
 
     //兑换区读写
-    FilePage *swap_read();
+    Page *swap_read();
 
-    void swap_write(FilePage *page);
+    void swap_write(Page *page);
 
     auto get_dentry_list(std::string path) -> std::list<Dentry *>;
+
+    void show_disk();
 
 private:
 
@@ -45,7 +47,7 @@ private:
     int last_j = 0;
 
     //兑换区
-    std::list<FilePage *> swap_list_;
+    std::list<Page *> swap_list_;
 };
 
 

@@ -6,7 +6,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.o"
   "CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.o"
   "CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o"
-  "CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o"
   "OSManager"
   "OSManager.pdb"
 )

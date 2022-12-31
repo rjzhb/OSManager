@@ -42,12 +42,3 @@ CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o: ../src/kernel/me
 CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o: ../src/kernel/thread/ThreadManager.cpp
 CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o: ../src/kernel/thread/ThreadManager.h
 
-CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o: ../src/include/define.h
-CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o: ../src/include/utils.h
-CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o: ../src/kernel/catalog/CatalogManager.h
-CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o: ../src/kernel/disk/DiskManager.h
-CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o: ../src/kernel/memory/MemoryManager.h
-CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o: ../src/kernel/thread/ThreadManager.h
-CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o: ../src/user/UserManager.cpp
-CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o: ../src/user/UserManager.h
-

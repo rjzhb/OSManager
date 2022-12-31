@@ -11,7 +11,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/rjzhb/Project/OSManager/src/kernel/disk/DiskManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/kernel/disk/DiskManager.cpp.o"
   "/home/rjzhb/Project/OSManager/src/kernel/memory/MemoryManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/kernel/memory/MemoryManager.cpp.o"
   "/home/rjzhb/Project/OSManager/src/kernel/thread/ThreadManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.o"
-  "/home/rjzhb/Project/OSManager/src/user/UserManager.cpp" "/home/rjzhb/Project/OSManager/cmake-build-debug/CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

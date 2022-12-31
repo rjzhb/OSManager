@@ -312,33 +312,6 @@ src/kernel/thread/ThreadManager.cpp.s:
 	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/kernel/thread/ThreadManager.cpp.s
 .PHONY : src/kernel/thread/ThreadManager.cpp.s
 
-src/user/UserManager.o: src/user/UserManager.cpp.o
-
-.PHONY : src/user/UserManager.o
-
-# target to build an object file
-src/user/UserManager.cpp.o:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/user/UserManager.cpp.o
-.PHONY : src/user/UserManager.cpp.o
-
-src/user/UserManager.i: src/user/UserManager.cpp.i
-
-.PHONY : src/user/UserManager.i
-
-# target to preprocess a source file
-src/user/UserManager.cpp.i:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/user/UserManager.cpp.i
-.PHONY : src/user/UserManager.cpp.i
-
-src/user/UserManager.s: src/user/UserManager.cpp.s
-
-.PHONY : src/user/UserManager.s
-
-# target to generate assembly for a file
-src/user/UserManager.cpp.s:
-	$(MAKE) -f CMakeFiles/OSManager.dir/build.make CMakeFiles/OSManager.dir/src/user/UserManager.cpp.s
-.PHONY : src/user/UserManager.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -369,9 +342,6 @@ help:
 	@echo "... src/kernel/thread/ThreadManager.o"
 	@echo "... src/kernel/thread/ThreadManager.i"
 	@echo "... src/kernel/thread/ThreadManager.s"
-	@echo "... src/user/UserManager.o"
-	@echo "... src/user/UserManager.i"
-	@echo "... src/user/UserManager.s"
 .PHONY : help
 
 

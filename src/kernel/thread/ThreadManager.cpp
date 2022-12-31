@@ -91,19 +91,28 @@ void ThreadManager::remove(std::string name) {
 void ThreadManager::open(std::string name) {
     if (free_thread_list_.empty()) {
         //需要关闭最早打开的文件
-        FileThread file_thread = alloc_thread_list_.front();
+        FileThread *file_thread = alloc_thread_list_.front();
         //释放内存
         Inode inode;
-        inode.name = file_thread.name;
+        inode.name = file_thread->name;
         catalog_manager_->close(name);
         alloc_thread_list_.pop_front();
-        free_thread_list_.push_back(file_thread.pthread);
+        free_thread_list_.push_back(file_thread->threadId);
     }
     //为任务分配线程
     pthread_t pthread = free_thread_list_.front();
     free_thread_list_.pop_front();
+    FileThread *thread = new FileThread(pthread, name);
+    alloc_thread_list_.push_back(thread);
+
     using CallParam = DeleteParam;
     CallParam param(name, memory_manager_, catalog_manager_);
+
+    if (param.memory_manager->judge_memory(param.name)) {
+        std::cout << "打开文件失败，该文件正处于打开状态" << std::endl;
+        return;
+    }
+
     pthread_create(&pthread, NULL, &data_call_task, &param);
     pthread_join(pthread, NULL);
 }
@@ -114,8 +123,7 @@ ThreadManager::ThreadManager(CatalogManager *catalog_manager,
     memory_manager_ = memory_manager;
     //初始化空闲的执行线程队列
     for (int i = 0; i < 8; i++) {
-        pthread_t thread;
-        free_thread_list_.push_back(thread);
+        free_thread_list_.push_back(i);
     }
 }
 
@@ -123,4 +131,15 @@ ThreadManager::~ThreadManager() {
     delete catalog_manager_;
     delete memory_manager_;
 
+}
+
+void ThreadManager::show_thread() {
+    //输出所有线程以及文件
+    std::cout << "线程\t\t" << "对应文件名\t\t" << "状态\t\t" << std::endl;
+    for (auto it: alloc_thread_list_) {
+        std::cout << it->threadId << "\t\t" << it->name << "\t\t" << "执行中\t\t" << std::endl;
+    }
+    for (auto it: free_thread_list_) {
+        std::cout << it << "\t\t暂无\t\t" << "空闲\t\t" << std::endl;
+    }
 }

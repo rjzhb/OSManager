@@ -123,12 +123,6 @@
 		<Unit filename="/home/rjzhb/Project/OSManager/src/kernel/thread/ThreadManager.h">
 			<Option target="OSManager"/>
 		</Unit>
-		<Unit filename="/home/rjzhb/Project/OSManager/src/user/UserManager.cpp">
-			<Option target="OSManager"/>
-		</Unit>
-		<Unit filename="/home/rjzhb/Project/OSManager/src/user/UserManager.h">
-			<Option target="OSManager"/>
-		</Unit>
 		<Unit filename="/home/rjzhb/Project/OSManager/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

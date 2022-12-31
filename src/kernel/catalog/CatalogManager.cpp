@@ -28,7 +28,7 @@ void CatalogManager::create_file(std::string file_name, std::string data) {
     dentry->name = file_name;
     dentry->createTime = get_system_time();
     dentry->owner = get_user_name();
-    Inode* inode = new Inode();
+    Inode *inode = new Inode();
     inode->name = file_name;
     inode->data = data;
     inode->size = data.size();
@@ -53,6 +53,19 @@ void CatalogManager::ls() {
 }
 
 void CatalogManager::cd(std::string dir_name) {
+    auto list = disk_manager_->get_dentry_list(path);
+    bool flag = false;
+    for (auto it: list) {
+        if (it->type == FileType::FOLDER && it->name == dir_name) {
+            flag = true;
+            break;
+        }
+    }
+
+    if (!flag) {
+        std::cout << "该文件夹不存在" << std::endl;
+    }
+
     if (dir_name == "../") {
         //返回上一级目录
         if (path == "/") {
@@ -79,6 +92,7 @@ void CatalogManager::open(std::string file_name) {
 
     if (!flag) {
         std::cout << "该文件不存在" << std::endl;
+        return;
     }
 
     //读入内存
@@ -103,4 +117,11 @@ CatalogManager::CatalogManager(DiskManager *disk_manager, MemoryManager *memory_
 CatalogManager::~CatalogManager() {
     delete disk_manager_;
     delete memory_manager_;
+}
+
+void CatalogManager::create_eight_files() {
+    for (int i = 0; i < 8; i++) {
+        std::string name = "a" + std::to_string(i);
+        create_file(name, "dsadsadf");
+    }
 }

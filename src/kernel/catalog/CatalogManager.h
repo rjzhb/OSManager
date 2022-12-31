@@ -26,6 +26,9 @@ public:
     //创建文件
     void create_file(std::string file_name, std::string data);
 
+    //测试用，一次性创建8个文件
+    void create_eight_files();
+
     //删除文件
     void rmfile(std::string file_name);
 

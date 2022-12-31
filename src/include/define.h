@@ -117,12 +117,12 @@ struct FilePage {
 
 
 struct FileThread {
+    int threadId;
     std::string name;
-    pthread_t pthread;
 
-    FileThread(std::string name, pthread_t pthread) {
+    FileThread(int threadId, std::string name) {
+        this->threadId = threadId;
         this->name = name;
-        this->pthread = pthread;
     }
 };
 
