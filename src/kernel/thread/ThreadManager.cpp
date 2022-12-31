@@ -137,9 +137,9 @@ void ThreadManager::show_thread() {
     //输出所有线程以及文件
     std::cout << "线程\t\t" << "对应文件名\t\t" << "状态\t\t" << std::endl;
     for (auto it: alloc_thread_list_) {
-        std::cout << it->threadId << "\t\t" << it->name << "\t\t" << "执行中\t\t" << std::endl;
+        std::cout << it->threadId << "\t\t" << it->name << "\t\t\t\t" << "执行中\t\t" << std::endl;
     }
     for (auto it: free_thread_list_) {
-        std::cout << it << "\t\t暂无\t\t" << "空闲\t\t" << std::endl;
+        std::cout << it << "\t\t暂无\t\t\t\t" << "空闲\t\t" << std::endl;
     }
 }

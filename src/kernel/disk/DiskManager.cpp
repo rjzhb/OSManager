@@ -217,12 +217,12 @@ void DiskManager::show_disk() {
     print_free_blocks();
     std::cout << "----------------------------------------------" << std::endl;
     std::cout << "占用的磁盘块：" << std::endl;
-    std::cout << "所在目录\t" << "文件名\t" << "类型\t" << "所有者\t" << "创建时间\t" << std::endl;
+    std::cout << "所在目录\t" << "文件名\t" << "类型\t" << "\t所有者\t" << "\t\t创建时间\t" << std::endl;
     for (auto it: dentry_map_) {
         for (auto item: it.second) {
             if (item->type == FileType::FOLDER)continue;
-            std::cout << it.first << "\t" << item->name << "\t" << type_to_string(item->type) << "\t" << item->owner
-                      << "\t"
+            std::cout << it.first << "\t\t" << item->name << "\t\t" << type_to_string(item->type) << "\t\t" << item->owner
+                      << "\t\t"
                       << item->createTime << std::endl;
         }
     }
