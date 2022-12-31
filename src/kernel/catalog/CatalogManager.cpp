@@ -53,6 +53,15 @@ void CatalogManager::ls() {
 }
 
 void CatalogManager::cd(std::string dir_name) {
+    if (dir_name == "../") {
+        //返回上一级目录
+        if (path == "/") {
+            return;
+        }
+        path = get_last_path(path);
+        return;
+    }
+
     auto list = disk_manager_->get_dentry_list(path);
     bool flag = false;
     for (auto it: list) {
@@ -64,15 +73,6 @@ void CatalogManager::cd(std::string dir_name) {
 
     if (!flag) {
         std::cout << "该文件夹不存在" << std::endl;
-    }
-
-    if (dir_name == "../") {
-        //返回上一级目录
-        if (path == "/") {
-            return;
-        }
-        path = get_last_path(path);
-        return;
     }
     path = path + dir_name + "/";
 }
