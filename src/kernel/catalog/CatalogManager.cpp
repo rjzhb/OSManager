@@ -45,8 +45,15 @@ void CatalogManager::rmfile(std::string file_name) {
 }
 
 void CatalogManager::ls() {
-    std::list<Dentry *> list = disk_manager_->get_dentry_list(path);
-    for (auto it: list) {
+    std::list<Dentry *> folder_list = disk_manager_->get_dentry_list(FileType::FOLDER, path);
+    std::list<Dentry *> file_list = disk_manager_->get_dentry_list(FileType::FILE, path);
+
+    for (auto it: folder_list) {
+        std::cout << it->name << "\t\t" << type_to_string(it->type) << "\t\t" << it->owner << "\t\t" << it->createTime
+                  << std::endl;
+    }
+
+    for (auto it: file_list) {
         std::cout << it->name << "\t\t" << type_to_string(it->type) << "\t\t" << it->owner << "\t\t" << it->createTime
                   << std::endl;
     }
@@ -62,7 +69,7 @@ void CatalogManager::cd(std::string dir_name) {
         return;
     }
 
-    auto list = disk_manager_->get_dentry_list(path);
+    auto list = disk_manager_->get_dentry_list(FileType::FOLDER, path);
     bool flag = false;
     for (auto it: list) {
         if (it->type == FileType::FOLDER && it->name == dir_name) {
@@ -79,7 +86,7 @@ void CatalogManager::cd(std::string dir_name) {
 
 void CatalogManager::open(std::string file_name) {
     //从磁盘中找到该文件的数据读入内存
-    auto list = disk_manager_->get_dentry_list(path);
+    auto list = disk_manager_->get_dentry_list(FileType::FILE, path);
     Inode *inode;
     bool flag = false;
     for (auto it: list) {
@@ -111,6 +118,7 @@ void CatalogManager::close(std::string file_name) {
 CatalogManager::CatalogManager(DiskManager *disk_manager, MemoryManager *memory_manager) {
     disk_manager_ = disk_manager;
     memory_manager_ = memory_manager;
+
 
 }
 

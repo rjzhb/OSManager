@@ -70,27 +70,27 @@ void DiskManager::swap_write(Page *page) {
 
 void DiskManager::alloc_free_block(Dentry *dentry) {
     //加入映射
-    if (dentry_map_.find(path) == dentry_map_.end()) {
+    if (dentry_map_["file"].find(path) == dentry_map_["file"].end()) {
         //如果map里面没有dentry链表,则创建dentry链表
         std::list<Dentry *> dentry_list;
         dentry_list.push_back(dentry);
-        dentry_map_[path] = dentry_list;
+        dentry_map_["file"][path] = dentry_list;
     } else {
         //先判断磁盘块是否已经有了此项
-        auto list = dentry_map_[path];
+        auto list = dentry_map_["file"][path];
         for (auto it: list) {
             if (it->name == dentry->name && it->type == dentry->type) {
                 std::cout << "分配磁盘块失败，该文件已存在" << std::endl;
                 return;
             }
         }
-        dentry_map_[path].push_back(dentry);
+        dentry_map_["file"][path].push_back(dentry);
     }
 
     //更新上一级映射
     if (path != "/") {
         std::string the_last_path = get_last_path(path);
-        for (auto it: dentry_map_[the_last_path]) {
+        for (auto it: dentry_map_["folder"][the_last_path]) {
             if (it->type == FileType::FOLDER) {
                 it->children.push_back(dentry);
             }
@@ -135,18 +135,18 @@ void DiskManager::alloc_free_block(Dentry *dentry) {
 }
 
 void DiskManager::delete_free_block(Dentry *dentry) {
-    if (dentry_map_.find(path) == dentry_map_.end()) {
+    if (dentry_map_["file"].find(path) == dentry_map_["file"].end()) {
         std::cout << "文件不存在" << std::endl;
         return;
     }
 
     bool flag = false;
     //删除链表中的dentry
-    for (auto it: dentry_map_[path]) {
+    for (auto it: dentry_map_["file"][path]) {
         if (it->name == dentry->name && it->type == dentry->type) {
             //从磁盘中找到的数据填充到dentry里
             dentry->inode = it->inode;
-            dentry_map_[path].remove(it);
+            dentry_map_["file"][path].remove(it);
             flag = true;
             break;
         }
@@ -160,13 +160,10 @@ void DiskManager::delete_free_block(Dentry *dentry) {
     //更新上一级映射
     if (path != "/" && dentry->type == FileType::FOLDER) {
         std::string the_last_path = get_last_path(path);
-        for (auto it: dentry_map_[the_last_path]) {
-            if (it->type == FileType::FOLDER) {
-                for (auto it = dentry_map_[the_last_path].begin(); it != dentry_map_[the_last_path].end(); it++) {
-                    if ((*it)->name == dentry->name && (*it)->type == dentry->type) {
-                        dentry_map_[the_last_path].erase(it);
-                    }
-                }
+        for (auto it = dentry_map_["folder"][the_last_path].begin();
+             it != dentry_map_["folder"][the_last_path].end(); it++) {
+            if ((*it)->name == dentry->name && (*it)->type == dentry->type) {
+                dentry_map_["folder"][the_last_path].erase(it);
             }
         }
     }
@@ -206,11 +203,17 @@ void DiskManager::delete_free_block(Dentry *dentry) {
 
 }
 
-auto DiskManager::get_dentry_list(std::string path) -> std::list<Dentry *> {
-    if (dentry_map_.find(path) == dentry_map_.end()) {
+auto DiskManager::get_dentry_list(FileType type, std::string path) -> std::list<Dentry *> {
+    std::string key;
+    if (type == FileType::FILE) {
+        key = "file";
+    } else {
+        key = "folder";
+    }
+    if (dentry_map_[key].find(path) == dentry_map_[key].end()) {
         return {};
     }
-    return dentry_map_[path];
+    return dentry_map_[key][path];
 }
 
 void DiskManager::show_disk() {
@@ -218,10 +221,11 @@ void DiskManager::show_disk() {
     std::cout << "----------------------------------------------" << std::endl;
     std::cout << "占用的磁盘块：" << std::endl;
     std::cout << "所在目录\t" << "文件名\t" << "类型\t" << "\t所有者\t" << "\t\t创建时间\t" << std::endl;
-    for (auto it: dentry_map_) {
+    for (auto it: dentry_map_["file"]) {
         for (auto item: it.second) {
             if (item->type == FileType::FOLDER)continue;
-            std::cout << it.first << "\t\t" << item->name << "\t\t" << type_to_string(item->type) << "\t\t" << item->owner
+            std::cout << it.first << "\t\t" << item->name << "\t\t" << type_to_string(item->type) << "\t\t"
+                      << item->owner
                       << "\t\t"
                       << item->createTime << std::endl;
         }

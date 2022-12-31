@@ -33,16 +33,16 @@ public:
     void swap_write(Page *page);
 
     //通过path获得磁盘链
-    auto get_dentry_list(std::string path) -> std::list<Dentry *>;
+    auto get_dentry_list(FileType type, std::string path) -> std::list<Dentry *>;
 
     //显示磁盘信息
     void show_disk();
 
 private:
 
-    //数据组织映射
-    std::unordered_map<std::string, std::list<Dentry *>> dentry_map_;
-    //空闲块(成组链接法)
+    //数据组织映射(二级索引)
+    std::unordered_map<std::string, std::unordered_map<std::string, std::list<Dentry *>>> dentry_map_;
+    //空闲块(位示图法)
     int free_block_list_[MAX_NUMBER_OF_GROUPS][MAX_FREE_BLOCK];
     //指向最后一个空闲块的指针
     int last_i = 0;
