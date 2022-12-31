@@ -32,8 +32,10 @@ public:
 
     void swap_write(Page *page);
 
+    //通过path获得磁盘链
     auto get_dentry_list(std::string path) -> std::list<Dentry *>;
 
+    //显示磁盘信息
     void show_disk();
 
 private:

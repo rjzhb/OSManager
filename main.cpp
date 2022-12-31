@@ -22,6 +22,7 @@ void print_help() {
     std::cout << "open test-------------一次性打开8个文件提供测试" << std::endl;
     std::cout << "remove----------------删除文件" << std::endl;
     std::cout << "open------------------打开文件" << std::endl;
+    std::cout << "close------------------关闭文件" << std::endl;
     std::cout << "show memory------------显示内存信息" << std::endl;
     std::cout << "show disk--------------显示外存信息" << std::endl;
     std::cout << "show thread------------显示线程信息" << std::endl;
@@ -64,7 +65,8 @@ int main() {
             quick_test(thread_manager);
         } else if (command.substr(0, 4) == "open") {
             thread_manager->open(command.substr(5, command.size() - 5));
-
+        } else if (command.substr(0, 5) == "close") {
+            catalog_manager->close(command.substr(6, command.size() - 6));
         } else if (command.substr(0, 6) == "remove") {
             thread_manager->remove(command.substr(7, command.size() - 7));
         } else if (command == "show memory") {

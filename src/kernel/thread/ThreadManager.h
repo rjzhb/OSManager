@@ -31,11 +31,14 @@ public:
     void show_thread();
 
 private:
+    //数据生成线程
     pthread_t data_generate_thread_;
+    //数据删除线程
     pthread_t data_remove_thread_;
+    //目录管理器
     CatalogManager *catalog_manager_;
+    //内存管理器
     MemoryManager *memory_manager_;
-
     //空闲的执行线程队列
     std::list<int> free_thread_list_;
     //已运行的执行线程队列
