@@ -69,15 +69,22 @@ void DiskManager::swap_write(Page *page) {
 }
 
 void DiskManager::alloc_free_block(Dentry *dentry) {
+    std::string key;
+    if (dentry->type == FileType::FILE) {
+        key = "file";
+    } else {
+        key = "folder";
+    }
+
     //加入映射
-    if (dentry_map_["file"].find(path) == dentry_map_["file"].end()) {
+    if (dentry_map_[key].find(path) == dentry_map_[key].end()) {
         //如果map里面没有dentry链表,则创建dentry链表
         std::list<Dentry *> dentry_list;
         dentry_list.push_back(dentry);
-        dentry_map_["file"][path] = dentry_list;
+        dentry_map_[key][path] = dentry_list;
     } else {
         //先判断磁盘块是否已经有了此项
-        auto list = dentry_map_["file"][path];
+        auto list = dentry_map_[key][path];
         for (auto it: list) {
             if (it->name == dentry->name && it->type == dentry->type) {
                 std::cout << "分配磁盘块失败，该文件已存在" << std::endl;
@@ -135,18 +142,25 @@ void DiskManager::alloc_free_block(Dentry *dentry) {
 }
 
 void DiskManager::delete_free_block(Dentry *dentry) {
-    if (dentry_map_["file"].find(path) == dentry_map_["file"].end()) {
+    std::string key;
+    if (dentry->type == FileType::FILE) {
+        key = "file";
+    } else {
+        key = "folder";
+    }
+
+    if (dentry_map_[key].find(path) == dentry_map_[key].end()) {
         std::cout << "文件不存在" << std::endl;
         return;
     }
 
     bool flag = false;
     //删除链表中的dentry
-    for (auto it: dentry_map_["file"][path]) {
+    for (auto it: dentry_map_[key][path]) {
         if (it->name == dentry->name && it->type == dentry->type) {
             //从磁盘中找到的数据填充到dentry里
             dentry->inode = it->inode;
-            dentry_map_["file"][path].remove(it);
+            dentry_map_[key][path].remove(it);
             flag = true;
             break;
         }
